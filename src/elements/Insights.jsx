@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Insights extends Component{
 
-    state = {entries: [], isLoading:true}
+    state = {entries: [], isLoading:true, teamAndAllies:[]}
 
     getEntries = () => {
         fetch('https://cdn.contentstack.io/v3/content_types/blog_post/entries?environment=development&locale=en-us', {
@@ -18,31 +18,51 @@ class Insights extends Component{
             return response.json()
         })
         .then((json) => {
-            console.log(json)
-            this.setState({entries:json.entries, isLoading:false})
+            this.setState({entries:json.entries, isLoading:false, teamAndAllies:this.state.teamAndAllies})
+        })
+    }
+
+    getTeamAndAllies = () => {
+        fetch('https://cdn.contentstack.io/v3/content_types/team_and_allies/entries?environment=development&locale=en-us', {
+            method:'get',
+            mode:'cors',
+            headers:{
+                api_key:'bltb9eff0ec0532965e',
+                access_token:'csbcb89082a35b960cf9d10e11',
+                Accept: "*/*"
+            }
+        })
+        .then((response)=> {
+            return response.json()
+        })
+        .then((json) => {            
+            this.setState({entries:this.state.entries, isLoading:false, teamAndAllies:json.entries })
         })
     }
 
     componentDidMount(){
         this.getEntries()
+        this.getTeamAndAllies()
     }
+
     render(){
-        const { entries, isLoading } = this.state;
+        const { entries, isLoading, teamAndAllies } = this.state;
         
         if ( isLoading ) {
             return null;
         }
-        let category = 'Insights',
-        categoryName = 'Category Name',
-        blogTitle = 'Blog title comes here',
-        blogText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit velit elit. Aliquam blandit rhoncus fermentum. Donec mollis vehicula arcu quis interdum. Nullam euismod volutpat porttitor.';
+        let category = 'Insights', categoryName = 'Category Name'
+        let sortedEntries = entries.sort((a, b) => b.date - a.date)
+        let componentsList = sortedEntries.map((blogPost) => {
 
-        let componentsList = entries.map((blogPost) => {
+            let author = teamAndAllies.filter((taa) => {
+                return blogPost.author[0] === taa.uid
+            })[0]
+            let link = window.location + blogPost.url.replace("/","")
 
             if ( blogPost.hero_image !== null){
 
                 let img_link = blogPost.hero_image.url
-
                 return (
                     <div className="blog-item">
                         <div className="image-holder">
@@ -50,9 +70,9 @@ class Insights extends Component{
                         </div>
                         <div className="content-holder">
                             <p className="date">{blogPost.date}</p>
-                            <p className="author">{blogPost.author[0]} <span>commercetools</span> </p>
+                            <p className="author">{author?.title} <span>{author?.role}</span> </p>
                             <h3 className="category-name">{categoryName}</h3>
-                            <h2 className="blog-title">{blogPost.title}</h2>
+                            <h2 className="blog-title"><a href={link} >{blogPost.title}</a></h2>
                             <p className="blog-text">{blogPost.summary}</p>
                         </div>
                     </div>
@@ -67,9 +87,9 @@ class Insights extends Component{
                         </div>
                         <div className="content-holder">
                             <p className="date">{blogPost.date}</p>
-                            <p className="author">{blogPost.author[0]} <span>commercetools</span> </p>
+                            <p className="author">{author?.title} <span>{author?.role}</span> </p>
                             <h3 className="category-name">{categoryName}</h3>
-                            <h2 className="blog-title">{blogPost.title}</h2>
+                            <h2 className="blog-title"><a href={link} >{blogPost.title}</a></h2>
                             <p className="blog-text">{blogPost.summary}</p>
                         </div>
                     </div>
