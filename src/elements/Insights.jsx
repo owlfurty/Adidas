@@ -62,7 +62,7 @@ class Insights extends Component{
             // let link = window.location + blogPost.url.replace("/","")
 
             const newTo = { 
-                pathname: `/blogdetail${blogPost.url}`, 
+                pathname: `/blogdetail/${blogPost.uid}`, 
                 blogpost: blogPost 
             }
             if ( blogPost.hero_image !== null){
@@ -81,26 +81,27 @@ class Insights extends Component{
                                 <h2 className="blog-title">{blogPost.title}</h2>
                                 <p className="blog-text">{blogPost.summary}</p>
                             </div>
-                        </div>
-                     
+                        </div> 
                     </Link>
                 )
 
             } else {
 
                 return (
-                    <div className="blog-item">
-                        <div className="image-holder">
-                            <img src="https://source.unsplash.com/user/dulceylima/930x930" alt=""/>
+                    <Link to={newTo}>
+                        <div className="blog-item">
+                            <div className="image-holder">
+                                <img src="https://source.unsplash.com/user/dulceylima/930x930" alt=""/>
+                            </div>
+                            <div className="content-holder">
+                                <p className="date">{blogPost.date}</p>
+                                <p className="author">{author?.title} <span>{author?.role}</span> </p>
+                                <h3 className="category-name">{categoryName}</h3>
+                                <h2 className="blog-title">{blogPost.title}</h2>
+                                <p className="blog-text">{blogPost.summary}</p>
+                            </div>
                         </div>
-                        <div className="content-holder">
-                            <p className="date">{blogPost.date}</p>
-                            <p className="author">{author?.title} <span>{author?.role}</span> </p>
-                            <h3 className="category-name">{categoryName}</h3>
-                            <h2 className="blog-title">{blogPost.title}</h2>
-                            <p className="blog-text">{blogPost.summary}</p>
-                        </div>
-                    </div>
+                    </Link>
                 )
             }
         })

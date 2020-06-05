@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 
 // Home layout
-import Demo from './home/MainDemo';
+import MachAliance from './home/MainDemo';
 import BlogDetail from './elements/BlogDetail'
 
 // Element Layout
@@ -44,7 +44,7 @@ class Root extends Component{
         return(
             <BrowserRouter basename={'/'}>
                 <Switch>
-                    <Route exact path={`${process.env.PUBLIC_URL}/`} component={Demo}/>
+                    <Route exact path={`${process.env.PUBLIC_URL}/`} component={MachAliance}/>
 
                     {/* Element Layout */}
                     <Route exact path={`${process.env.PUBLIC_URL}/service`} component={Service}/>
@@ -54,7 +54,7 @@ class Root extends Component{
                     <Route exact path={`${process.env.PUBLIC_URL}/portfolio-details`} component={PortfolioDetails}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/blog`} component={Blog}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/blog-details`} component={BlogDetails}/>
-                    <Route exact path={`${process.env.PUBLIC_URL}/blogdetail/:url`} component={BlogDetail}/>
+                    <Route exact path={`${process.env.PUBLIC_URL}/blogdetail/:uid`} component={BlogDetail}/>
 
                     {/* Blocks Elements  */}
                     <Route exact path={`${process.env.PUBLIC_URL}/team`} component={Team}/>
