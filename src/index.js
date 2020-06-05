@@ -7,6 +7,7 @@ import './index.scss';
 
 // Home layout
 import Demo from './home/MainDemo';
+import BlogDetail from './elements/BlogDetail'
 
 // Element Layout
 import Service from "./elements/Service";
@@ -53,7 +54,7 @@ class Root extends Component{
                     <Route exact path={`${process.env.PUBLIC_URL}/portfolio-details`} component={PortfolioDetails}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/blog`} component={Blog}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/blog-details`} component={BlogDetails}/>
-
+                    <Route exact path={`${process.env.PUBLIC_URL}/blogdetail/:url`} component={BlogDetail}/>
 
                     {/* Blocks Elements  */}
                     <Route exact path={`${process.env.PUBLIC_URL}/team`} component={Team}/>

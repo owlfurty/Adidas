@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 
 class Insights extends Component{
 
@@ -58,24 +59,31 @@ class Insights extends Component{
             let author = teamAndAllies.filter((taa) => {
                 return blogPost.author[0] === taa.uid
             })[0]
-            let link = window.location + blogPost.url.replace("/","")
+            // let link = window.location + blogPost.url.replace("/","")
 
+            const newTo = { 
+                pathname: `/blogdetail${blogPost.url}`, 
+                blogpost: blogPost 
+            }
             if ( blogPost.hero_image !== null){
 
                 let img_link = blogPost.hero_image.url
                 return (
-                    <div className="blog-item">
-                        <div className="image-holder">
-                            <img src={img_link} alt=""/>
+                    <Link to={newTo}>
+                        <div className="blog-item">
+                            <div className="image-holder">
+                                <img src={img_link} alt=""/>
+                            </div>
+                            <div className="content-holder">
+                                <p className="date">{blogPost.date}</p>
+                                <p className="author">{author?.title} <span>{author?.role}</span> </p>
+                                <h3 className="category-name">{categoryName}</h3>
+                                <h2 className="blog-title">{blogPost.title}</h2>
+                                <p className="blog-text">{blogPost.summary}</p>
+                            </div>
                         </div>
-                        <div className="content-holder">
-                            <p className="date">{blogPost.date}</p>
-                            <p className="author">{author?.title} <span>{author?.role}</span> </p>
-                            <h3 className="category-name">{categoryName}</h3>
-                            <h2 className="blog-title"><a href={link} >{blogPost.title}</a></h2>
-                            <p className="blog-text">{blogPost.summary}</p>
-                        </div>
-                    </div>
+                     
+                    </Link>
                 )
 
             } else {
@@ -89,7 +97,7 @@ class Insights extends Component{
                             <p className="date">{blogPost.date}</p>
                             <p className="author">{author?.title} <span>{author?.role}</span> </p>
                             <h3 className="category-name">{categoryName}</h3>
-                            <h2 className="blog-title"><a href={link} >{blogPost.title}</a></h2>
+                            <h2 className="blog-title">{blogPost.title}</h2>
                             <p className="blog-text">{blogPost.summary}</p>
                         </div>
                     </div>
