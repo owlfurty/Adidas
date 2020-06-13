@@ -11,6 +11,17 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Poppins', sans-serif;
 
 -------------------------------------*/
+body {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    outline: none;
+}
 
 .hidden {
     display: none;
@@ -276,6 +287,172 @@ h3.category {
     }
 }
 
+.mediacontacts-content {
+    background: white;
+    padding: 0 30px 30px;
+    margin: 2em 0 0;
+    position: relative;
+    z-index: -99;
+    figure {
+        ul {
+            padding: 0;
+            display: flex;
+            li {
+                list-style-type: none;
+                width: 24px;
+                height: 24px;
+                text-align: left;
+                margin-top: 4px;
+                margin-right: 4px;
+                img {
+                    box-shadow: none;
+                    margin-bottom: 0;
+                    border: none;
+                }
+            }
+        }
+    }
+    p {
+        font-size: 24px!important;
+        font-weight: bold;
+    }
+    .text-link {
+        color: black;
+        position: absolute;
+        right: 14px;
+        font-size: 12px;
+        bottom: 10px;
+    }
+    .category {
+        color: $brand-yellow;
+        margin-top: 10em;
+        &.crewtwo {
+            margin-top: 3em;
+        }
+    }
+}
+
+.mediacontacts-pictures {
+    >div {
+        margin-bottom: 1em;
+    }
+
+    
+    img {
+        box-shadow: -8px 8px 0 $brand-yellow;
+        margin-bottom: 2em;
+    }
+    p {
+        color: black;
+        font-size: 14px!important;
+        line-height: 1em!important;
+        margin: 0!important;
+        &.member {
+            font-weight: 400;
+            text-align: center;
+            font-size: 12px!important;
+        }
+        &.contact {
+            font-weight: 700;
+        }
+    }
+}
+
+
+.mediamentions-content {
+    background: white;
+    padding: 0 30px 30px;
+    margin: 2em 0 0;
+    position: relative;
+    z-index: -99;
+    ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        li {
+            list-style-image: url('/assets/images/brand/bullet.svg');
+            width: 100%;
+            text-align: left;
+            margin-top: 4px;
+            margin-right: 4px;
+            a {
+                font-size: 18px;
+                line-height: 22px;
+                font-weight: bold;
+                margin-bottom: 1em;
+                display: block;
+            }
+            img {
+                box-shadow: none;
+                margin-bottom: 0;
+                border: none;
+            }
+        }
+    }
+    p {
+        font-size: 24px!important;
+        font-weight: bold;
+    }
+    .text-link {
+        color: black;
+        position: absolute;
+        right: 14px;
+        font-size: 12px;
+        bottom: 10px;
+    }
+    .category {
+        color: $brand-yellow;
+        margin-top: 10em;
+        &.crewtwo {
+            margin-top: 3em;
+        }
+    }
+}
+
+a.button {
+    padding: 0 2em;
+    display: inline-block;
+    background: black;
+    border: none;
+    color: $brand-yellow;
+    height: 27px;
+    line-height: 28px;
+    font-size: 9px;
+    letter-spacing: 2.29px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+
+.mediamentions-links {
+    max-width: 92vw;
+    >div {
+        margin-bottom: 1em;
+    }
+
+
+
+    img {
+        box-shadow: -8px 8px 0 $brand-yellow;
+        margin-bottom: 2em;
+    }
+    p {
+        color: black;
+        font-size: 14px!important;
+        line-height: 1em!important;
+        margin: 0!important;
+        &.member {
+            font-weight: 400;
+            text-align: center;
+            font-size: 12px!important;
+        }
+        &.contact {
+            font-weight: 700;
+        }
+    }
+}
+
 
 
 .team-pictures {
@@ -337,6 +514,13 @@ h3.category {
     margin-top: 2em;
     margin-left: -5px;
     margin-bottom: 10px;
+    a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
     &:before{
         content: '';
         background-image: url(/assets/images/brand/watermark-yellow.svg);
@@ -465,6 +649,152 @@ h3.category {
 
 
 
+
+/*=========================
+    Press Items
+==========================*/
+
+.press-item {
+    position: relative;
+    margin-top: 2em;
+    margin-left: -5px;
+    margin-bottom: 10px;
+    &:before{
+        content: '';
+        width: 40px;
+        height: 40px;
+        z-index: 1;
+        position: absolute;
+    }
+    .image-holder {
+        height: 115px;
+        width: 115px;
+        img {
+            width: 100%;
+            margin-left: 15px;
+            margin-top: -10px;
+            margin-bottom: 1em;
+            box-shadow: -8px 8px 0 $brand-yellow;
+        }
+    }
+    .text-holder {
+        background-color: white;
+    }
+    .text-holder {
+        padding: 5px 15px 5px;
+        background-color: white;
+        p {
+            font-size: 12px!important;
+            line-height: 1.3em!important;
+            margin: 0!important;
+            font-weight: 700;
+            
+            &.date {
+                font-weight: 400;
+                position: absolute;
+                left: 142px;
+                top: -4px;
+            }
+            &.author {
+                position: absolute;
+                left: 160px;
+                top: 42px;
+                font-size: 14px!important;
+                width: 82px;
+                span {
+                    font-weight: 400;
+                    font-size: 12px;
+                    &::before {
+                        content: "";
+                    }
+                }
+            }
+            &.press-text {
+                display: none;
+                font-weight: normal;  
+                font-size: 14px!important;
+                line-height: 22px!important; 
+            }
+        }
+        h2 {
+            font-size: 14px;
+            line-height: 16px;
+            margin: 0 30px .5em 127px;
+            position: absolute;
+            top: 14px;
+        }
+        h3 {
+            text-transform: uppercase;
+            font-size: 10px;
+            line-height: 1.6em;
+            letter-spacing: 1.5px;
+            font-weight: normal;
+            margin: 0 0 2px;
+        }
+    }
+
+    &:nth-child(1) {
+        .image-holder {
+            height: inherit;
+            min-height: 300px;
+            width: 100%;
+            img {
+                margin-left: 15px;
+                margin-top: -10px;
+                margin-bottom: 1em;
+            }
+        }
+        .text-holder {
+            padding: 15px 15px 5px;
+            p {
+                font-size: 12px!important;
+                line-height: 1.3em!important;
+                margin: 0!important;
+                font-weight: 700;
+                &.date {
+                    font-weight: 400;
+                    position: inherit;
+                }
+                &.author {
+                    position: inherit;
+                    width: inherit;
+                    span {
+                        font-size: inherit;
+                        font-weight: inherit;
+                        &::before {
+                            content: "- ";
+                        }
+                    }
+                }
+                &.press-text {
+                    display: inherit;
+                    font-weight: normal;  
+                    font-size: 14px!important;
+                    line-height: 22px!important; 
+                }
+            }
+            h2 {
+                font-size: 22px;
+                line-height: 20px;
+                margin: 0 0 .5em;
+                position: inherit;
+            }
+            h3 {
+                text-transform: uppercase;
+                font-size: 10px;
+                line-height: 1.6em;
+                letter-spacing: 1.5px;
+                font-weight: normal;
+                margin: 15px 0 2px;
+            }
+        }
+    }
+    
+}
+
+
+
+
 /*=========================
     Text specialized 
 ==========================*/
@@ -492,6 +822,32 @@ h3.category {
     }
 
 }
+
+
+form {
+    &.on-yellow {
+        input {
+            border: none;
+            border-bottom: 1px solid black;
+            width: 100%;
+            border-radius: 0;
+            margin-bottom: 1.4em;
+            &::-webkit-input-placeholder {
+                color: black;
+                font-weight: bold;
+            }
+        }
+    }
+    button {
+        border: 1px solid black;
+        width: 148px;
+        height: 50px;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 2em 0;
+    }
+}
+
 
 /*===================
 Custom Row

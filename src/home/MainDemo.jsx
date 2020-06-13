@@ -10,6 +10,11 @@ import Architecture from "../elements/Architecture";
 import Theboard from "../elements/Theboard";
 import Members from "../elements/Members";
 import Insights from "../elements/Insights";
+import Pressroom from "../elements/Pressroom";
+import Mediacontacts from "../elements/Mediacontacts";
+import Mediamentions from "../elements/Mediamentions";
+import MyForm from "../elements/MyForm"
+import Getintouch from "../elements/Getintouch"
 
 import Helmet from "../component/common/Helmet";
 
@@ -17,7 +22,7 @@ class MainDemo extends Component{
     render(){
         return(
             <Fragment> 
-                <Helmet pageTitle="Main Demo" />
+                <Helmet pageTitle="MACH Alliance" />
 
                 <Header headertransparent="header--transparent" colorblack="color--black" logoname="logo.png" />
 
@@ -70,10 +75,38 @@ class MainDemo extends Component{
                 </div>
                 {/* End Insights Area */}
 
+                {/* Start Pressroom Area */}
+                <div className="pressroom-area pressroom-position-top linend">
+                    <Pressroom />
+                </div>
+                {/* End Pressroom Area */}
 
+                {/* Start Mediacontacts Area */}
+                <div className="mediacontacts-area mediacontacts-position-top linend">
+                    <Mediacontacts />
+                </div>
+                {/* End Mediacontacts Area */}
+
+                {/* Start Mediamentions Area */}
+                <div className="mediamentions-area mediamentions-position-top linend">
+                    <Mediamentions />
+                </div>
+                {/* End Mediamentions Area */}
                 
+                {/* Start MyForm Area */}
+                <div className="myForm-area myForm-position-top linend">
+                    <MyForm />
+                </div>
+                {/* End MyForm Area */}
+
+                {/* Start Getintouch Area */}
+                <div className="getintouch-area getintouch-position-top linend">
+                    <Getintouch />
+                </div>
+                {/* End Getintouch Area */}
                 
             </Fragment>
+            
         )
     }
 }

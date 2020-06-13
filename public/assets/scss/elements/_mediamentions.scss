@@ -1,0 +1,227 @@
+/*====================
+    mediamentions Area 
+======================*/
+
+.rn-finding-us-area {
+    .inner {
+        position: relative;
+        padding-left: 240px;
+        padding-top: 110px;
+        padding-bottom: 110px;
+
+        @media #{$lg-layout} {
+            padding-left: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        @media #{$md-layout} {
+            padding-left: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        @media #{$sm-layout} {
+            padding-left: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .content-wrapper {
+            .content {
+                background: #272527;
+                padding: 120px 100px;
+                position: relative;
+                z-index: 2;
+                width: 800px;
+                border-radius: 10px;
+                
+                @media #{$lg-layout} {
+                    padding: 60px 50px;
+                    width: 100%;
+                    border-radius: 0;
+                }
+
+                @media #{$md-layout} {
+                    padding: 60px 50px;
+                    width: 100%;
+                    border-radius: 0;
+                }
+
+                @media #{$sm-layout} {
+                    padding: 30px 30px;
+                    width: 100%;
+                    border-radius: 0;
+                }
+
+                h4 {
+                    color: #ffffff;
+                    font-size: 36px;
+                    font-weight: 500;
+                    margin-bottom: 20px;
+                    @media #{$sm-layout} {
+                        font-size: 26px;
+                        margin-bottom: 12px;
+                    }
+                }
+                p {
+                    font-size: 18px;
+                    color: #ffffff;
+                    font-weight: 300;
+                    margin-bottom: 41px;
+                    padding-right: 10%;
+                    @media #{$sm-layout} {
+                        margin-bottom: 24px;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+        .thumbnail{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            
+            @media #{$lg-layout} {
+                position: static;
+                height: 100%;
+            }
+
+            @media #{$md-layout} {
+                position: static;
+                height: 100%;
+            }
+
+            @media #{$sm-layout} {
+                position: static;
+                height: 100%;
+            }
+            img {
+                border-radius: 10px;
+                @media #{$lg-layout} {
+                    border-radius: 0;
+                }
+                @media #{$md-layout} {
+                    border-radius: 0;
+                }
+                @media #{$sm-layout} {
+                    border-radius: 0;
+                }
+            }
+        }
+    }
+}
+
+.paragraph p {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.mediamentions-inner {
+    .title {
+        color: black;
+        margin-top: .8em;
+    }
+    .section-title h3.category {
+        color: #BE1E2D;
+        text-transform: uppercase;
+        font-size: 9px;
+        letter-spacing: 2px;
+        margin-bottom: 0!important;
+    }
+    @media #{$md-layout} {
+        padding-top: 1em;
+    }
+    @media #{$sm-layout} {
+        padding-top: 1em;
+    }
+    .section-title{
+        p{
+            &.description{
+                font-weight: 400;
+            }
+        }
+
+    }
+   
+}
+
+.mediamentions-area {
+    @media #{$sm-layout} {
+        padding-bottom: 0;
+    }
+    
+}
+
+.mediamentions-wrapper {
+    .thumbnail {
+        position: relative;
+        z-index: 2;
+        img{
+            border-radius: 8px;
+           
+        }
+    }
+    // &:after {
+    //     content: "";
+    //     background-image: url(/assets/images/brand/oval.svg);
+    //     width: 185px;
+    //     height: 322px;
+    //     display: inline-block;
+    //     position: absolute;
+    //     margin-top: 1em;
+    //     z-index: -999;
+    // }
+}
+
+.mediamentions-position-top {
+    @media #{$lg-layout} {
+        padding-top: 1em;
+    }
+    @media #{$md-layout} {
+        padding-top: 2em;
+    }
+    @media #{$sm-layout} {
+        padding-top: 3em;
+    }
+    .thumbnail {
+        margin-top: 130px;
+        @media #{$lg-layout} {
+            margin-top: 0;
+        }
+        @media #{$laptop-device} {
+            margin-top: -89px;
+        }
+        @media #{$md-layout} {
+            margin-top: 0;
+        }
+        @media #{$sm-layout} {
+            margin-top: 0;
+        }
+    }
+}
+
+.mediamentions-us-list{
+    margin-top: 15px;
+    h3{
+        &.title{
+            font-size: 30px;
+            @extend %fontWeight500;
+            margin-bottom: 20px;
+            @media #{$sm-layout} {
+                font-size: 26px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+    p{
+        font-weight: 300;
+        color: rgba(29, 29, 36, 0.75);
+    }
+}

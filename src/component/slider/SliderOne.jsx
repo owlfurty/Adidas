@@ -16,7 +16,7 @@ class SliderOne extends Component {
                     </div>
                     {/* Start Home CTA */}
                     <div className="header-btn">
-                                <a className="rn-btn home-btn" href="/">
+                                <a className="rn-btn home-btn" target="blank" href="https://airtable.com/shr4tKK2Kduhj84iM">
                                     <span>join the movement</span>
                                 </a>
                             </div>

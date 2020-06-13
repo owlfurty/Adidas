@@ -1,6 +1,9 @@
 import React, { Component } from "react";
-
-import { Link } from 'react-router-dom'
+import PageHelmet from "../component/common/Helmet";
+import ScrollToTop from 'react-scroll-up';
+import { FiChevronUp } from "react-icons/fi";
+import Header from "../component/header/Header";
+import Footer from "../component/footer/Footer";
 
 
 class BlogDetail extends Component {
@@ -36,7 +39,6 @@ class BlogDetail extends Component {
     }
 
     componentDidMount(){
-        //https://cdn.contentstack.io/v3/content_types/blog_post/entries/blta278bb5672180c94?&environment=development&locale=en-us
         this.getBlog(this.uid)
 
     }
@@ -51,14 +53,38 @@ class BlogDetail extends Component {
         let tagsList = blog.tags?.join(",")
         return (
 
-            <main>
-                <div>
-                    <h2 className="blog-title">{blog.title}</h2>
-                    <p className="blog-text">Tags: {tagsList}</p>
-                    <p className="blog-text">{blog.summary}</p>
-                    <div dangerouslySetInnerHTML={{ __html: blog.body} } />
+            <React.Fragment>
+                <PageHelmet pageTitle='Blog Details' />
+                <Header headertransparent="header--black" colorblack="color--white" logoname="logo.png" />
+
+                {/* Start Blog Details */}
+                <div className="rn-blog-details pt--110 pb--70 bg_color--1">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <h2 className="blog-title">{blog.title}</h2>
+                                <p className="blog-text">Tags: {tagsList}</p>
+                                <p className="blog-text">{blog.summary}</p>
+                                <div dangerouslySetInnerHTML={{ __html: blog.body} } />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </main>
+                {/* End Blog Details */}
+                            
+
+                {/* Start Back To Top */}
+                <div className="backto-top">
+                    <ScrollToTop showUnder={160}>
+                        <FiChevronUp />
+                    </ScrollToTop>
+                </div>
+                {/* End Back To Top */}
+        
+
+                <Footer /> 
+
+            </React.Fragment>
         )
     }
 

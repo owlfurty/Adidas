@@ -69,8 +69,9 @@ class Insights extends Component{
 
                 let img_link = blogPost.hero_image.url
                 return (
-                    <Link to={newTo}>
+                    
                         <div className="blog-item">
+                            <Link to={newTo} alt='blog'></Link>
                             <div className="image-holder">
                                 <img src={img_link} alt=""/>
                             </div>
@@ -82,14 +83,13 @@ class Insights extends Component{
                                 <p className="blog-text">{blogPost.summary}</p>
                             </div>
                         </div> 
-                    </Link>
                 )
 
             } else {
 
                 return (
-                    <Link to={newTo}>
                         <div className="blog-item">
+                            <Link to={newTo}></Link>
                             <div className="image-holder">
                                 <img src="https://source.unsplash.com/user/dulceylima/930x930" alt=""/>
                             </div>
@@ -101,7 +101,6 @@ class Insights extends Component{
                                 <p className="blog-text">{blogPost.summary}</p>
                             </div>
                         </div>
-                    </Link>
                 )
             }
         })
