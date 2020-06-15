@@ -87,7 +87,7 @@ class Pressroom extends Component{
                             </div>
 
                             <div className="col-12">
-                                <div className="pressroom-inner inner">
+                                <div className="pressroom-inner inner cssgrid">
                                     {componentsList}
                                 </div>
                             </div>

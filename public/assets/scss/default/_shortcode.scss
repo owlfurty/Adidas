@@ -178,27 +178,84 @@ a.text-link {
     text-decoration: underline;
 }
 
+.paragraph p {
+    font-size: 16px;
+    line-height: 23px;
+    @media #{$sm-layout} {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
 
 .quote-thumb {
     background: black;
-    padding: 50px 30px;
+    padding: 50px 104px;
     margin: 1em 0 2em;
-    text-align: center;
+    max-width: 70%;
+    transform: translateX(-4.9em);
+    @media #{$sm-layout} {
+        max-width: 94%;
+        text-align: center;
+        transform: translateX(0);
+        padding: 50px 30px;
+    }
+    p {
+        font-size: 30px;
+        line-height: 40px;
+        @media #{$sm-layout} {
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
 }
 
 h3.category {
     color: #BE1E2D;
     text-transform: uppercase;
-    font-size: 9px!important;
+    font-size: 12px!important;
     letter-spacing: 2px;
     margin-bottom: 3em!important;
+    @media #{$sm-layout} {
+        font-size: 9px!important;
+    }
 }
 
 .info-content {
     background: black;
     padding: 50px 30px 30px;
     margin: 2em 24px 2em 0;
-    position: relative;
+    position: absolute;
+    display: flex;
+    zoom: 1.8;
+    width: 100%;
+    max-width: 300px;
+    left: 36vw;
+    top: 4.4em;
+    transform: translateX(-6em);
+    @media #{$lg-layout} {
+        zoom: 1;
+        top: 0;
+        left: 0;
+        max-width: 95%;
+        position: relative;
+        transform: inherit;
+    }
+    @media #{$md-layout} {
+        zoom: 1;
+        top: 0;
+        left: 0;
+        max-width: 94%;
+        position: relative;
+        transform: inherit;
+    }
+    @media #{$sm-layout} {
+        zoom: 1;
+        top: 0;
+        left: 0;
+        max-width: 94%;
+        position: relative;
+        transform: inherit;
+    }
     p {
         font-size: 24px!important;
         font-weight: bold;
@@ -222,13 +279,20 @@ h3.category {
     }
 }
 
-
+.logo {
+    img {
+        width: 113px;
+    }
+}
 .team-content {
     background: black;
-    padding: 50px 30px 30px;
+    padding: 50px 75px 30px;
     margin: 2em 0 0;
     position: relative;
     z-index: -99;
+    @media #{$sm-layout} {
+        padding: 50px 30px 30px;
+    }
     p {
         font-size: 24px!important;
         font-weight: bold;
@@ -244,10 +308,10 @@ h3.category {
         content: '';
         background: url(/assets/images/brand/triangle-yellow.svg) no-repeat;
         top: -98px;
-        left: 0;
+        left: -90px;
         bottom: 0;
         position: absolute;
-        width: 151px;
+        width: 242px;
         height: 197px;
         z-index: -9;
     }
@@ -289,7 +353,7 @@ h3.category {
 
 .mediacontacts-content {
     background: white;
-    padding: 0 30px 30px;
+    padding: 0 0 30px;
     margin: 2em 0 0;
     position: relative;
     z-index: -99;
@@ -297,6 +361,10 @@ h3.category {
         ul {
             padding: 0;
             display: flex;
+            zoom: 1.5;
+            @media #{$sm-layout} {
+                zoom: 1;
+            }
             li {
                 list-style-type: none;
                 width: 24px;
@@ -344,9 +412,13 @@ h3.category {
     }
     p {
         color: black;
-        font-size: 14px!important;
-        line-height: 1em!important;
+        font-size: 16px!important;
+        line-height: 23px!important;
         margin: 0!important;
+        @media #{$sm-layout} { 
+            font-size: 14px!important;
+            line-height: 1em!important;
+        }
         &.member {
             font-weight: 400;
             text-align: center;
@@ -358,29 +430,53 @@ h3.category {
     }
 }
 
-
-.mediamentions-content {
-    background: white;
-    padding: 0 30px 30px;
+.events-content {
+    padding: 0 0 30px;
     margin: 2em 0 0;
     position: relative;
-    z-index: -99;
     ul {
         padding: 0;
-        display: flex;
-        flex-direction: column;
+        box-sizing: border-box;
         li {
-            list-style-image: url('/assets/images/brand/bullet.svg');
-            width: 100%;
             text-align: left;
-            margin-top: 4px;
-            margin-right: 4px;
-            a {
-                font-size: 18px;
-                line-height: 22px;
-                font-weight: bold;
-                margin-bottom: 1em;
+            float: left;
+            width: 50%;
+            display: inline-block;
+            margin-bottom: 2em;
+            @media #{$sm-layout} {
+                float: inherit;
+                width: 100%;
                 display: block;
+            }
+            a {
+                position: relative;
+                &:before {
+                    position: absolute;
+                    left: -20px;
+                    top: 50%;
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    display: inline-flex;
+                    background-image: url('/assets/images/brand/bullet.svg');
+                }
+                font-size: 32px;
+                line-height: 32px;
+                @media #{$sm-layout} {
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+                font-weight: bold;
+                margin-left: 12px;
+                display: inline-block;
+                color: white;
+                span {
+                    display: block;
+                    &.event-date {
+                        font-size: 14px;
+                        font-weight: normal;
+                    }
+                }
             }
             img {
                 box-shadow: none;
@@ -408,8 +504,90 @@ h3.category {
         }
     }
 }
+.events-links {
+    max-width: 92vw;
+    >div {
+        margin-bottom: 1em;
+    }
+
+
+
+    img {
+        box-shadow: -8px 8px 0 $brand-yellow;
+        margin-bottom: 2em;
+    }
+    p {
+        color: black;
+        font-size: 14px!important;
+        line-height: 1em!important;
+        margin: 0!important;
+        &.member {
+            font-weight: 400;
+            text-align: center;
+            font-size: 12px!important;
+        }
+        &.contact {
+            font-weight: 700;
+        }
+    }
+}
+
+.mediamentions-content {
+    background: white;
+    padding: 0 0 30px;
+    margin: 2em 0 0;
+    position: relative;
+    z-index: -99;
+    ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        li {
+            list-style-image: url('/assets/images/brand/bullet.svg');
+            width: 100%;
+            text-align: left;
+            margin-top: 4px;
+            margin-right: 4px;
+            a {
+                font-size: 32px;
+                line-height: 32px;
+                @media #{$sm-layout} {
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+                font-weight: bold;
+                margin-bottom: 1em;
+                display: block;
+            }
+            img {
+                box-shadow: none;
+                margin-bottom: 0;
+                border: none;
+            }
+        }
+    }
+    p {
+        font-size: 124px!important;
+        font-weight: bold;
+    }
+    .text-link {
+        color: black;
+        position: absolute;
+        right: 14px;
+        font-size: 12px;
+        bottom: 10px;
+    }
+    .category {
+        color: $brand-yellow;
+        margin-top: 10em;
+        &.crewtwo {
+            margin-top: 3em;
+        }
+    }
+}
 
 a.button {
+    zoom: 1.5;
     padding: 0 2em;
     display: inline-block;
     background: black;
@@ -422,7 +600,18 @@ a.button {
     text-transform: uppercase;
     font-weight: 700;
     border-radius: 5px;
+    margin: 1em 0 2em;
+
+    &.whitebg {
+        background: white;
+        color: black;
+    }
+
+    @media #{$sm-layout} {
+        zoom: 1;
+    }
 }
+
 
 
 .mediamentions-links {
@@ -513,7 +702,16 @@ a.button {
     position: relative;
     margin-top: 2em;
     margin-left: -5px;
-    margin-bottom: 10px;
+    margin-bottom: 4em;
+    padding: 35px;
+    display: flex;
+    flex-direction: unset;
+    @media #{$sm-layout} {
+     margin-bottom: 10px;
+     padding: 0;          
+     flex-direction: inherit; 
+     display: inherit;
+    }
     a {
         position: absolute;
         top: 0;
@@ -528,20 +726,43 @@ a.button {
         height: 40px;
         z-index: 1;
         position: absolute;
+        right: 15px;
+        bottom: 15px;
+        @media #{$sm-layout} {
+            right: inherit;
+            bottom: inherit;
+        }
     }
     .image-holder {
-        height: 115px;
-        width: 115px;
+        height: inherit;
+        min-height: 100%;
+        width: 100%; 
+        max-width: 300px;
+
+        float: left;
+        @media #{$sm-layout} {
+            width: 100%; 
+            float: inherit;  
+            max-width: 115px;
+            min-height: 115px;
+        }
         img {
-            width: 100%;
-            margin-left: 15px;
-            margin-top: -10px;
-            margin-bottom: 1em;
+            margin-left: 0;
+            margin-top: -60px;
+            margin-bottom: 0;
+            @media #{$sm-layout} {
+                margin-left: 15px;
+                margin-top: -10px;
+                margin-bottom: 1em;
+            }
         }
     }
 
     .content-holder {
-        padding: 5px 15px 5px;
+        padding: 5px 0 5px;
+        @media #{$sm-layout} {
+            padding: 5px 15px 5px;
+        }
         p {
             font-size: 12px!important;
             line-height: 1.3em!important;
@@ -549,21 +770,44 @@ a.button {
             font-weight: 700;
             &.date {
                 font-weight: 400;
-                position: absolute;
+                position: relative;
                 right: 14px;
+                left: 50px;
                 top: 14px;
+                font-size: 16px!important;
+                @media #{$sm-layout} { 
+                    position: absolute;
+                    left: inherit;
+                    font-size: 12px!important;
+                }
             }
             &.author {
-                position: absolute;
-                left: 160px;
-                top: 42px;
-                font-size: 14px!important;
-                width: 82px;
+                position: relative;
+                left: 50px;
+                top: 1em;
+                font-size: 16px!important;
+                width: 100%;
+                font-size: 30px;
+                @media #{$sm-layout} {
+                    position: absolute;
+                    left: 160px;
+                    top: 42px;
+                    width: 82px;
+                    font-size: 14px!important;
+                }
                 span {
                     font-weight: 400;
-                    font-size: 12px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    @media #{$sm-layout} {
+                        font-size: 12px;
+                        font-weight: 400;
+                    }
                     &::before {
-                        content: "";
+                        content: "- ";
+                        @media #{$sm-layout} {
+                            content: "";
+                        }
                     }
                 }
             }
@@ -577,7 +821,10 @@ a.button {
         h2 {
             font-size: 22px;
             line-height: 20px;
-            margin: 0 0 .5em;
+            margin: 0 50px .5em;
+            @media #{$sm-layout} {
+                margin: 0 0 .5em;
+            }
         }
         h3 {
             text-transform: uppercase;
@@ -585,23 +832,41 @@ a.button {
             line-height: 1.6em;
             letter-spacing: 1.5px;
             font-weight: normal;
-            margin: 0 0 2px;
+            margin: 30px 50px 2px;
+            @media #{$sm-layout} {
+                margin: 0 0 2px;
+            }
         }
     }
 
     &:nth-child(1) {
+        flex-direction: row-reverse;
         .image-holder {
             height: inherit;
-            min-height: 300px;
-            width: 100%;
+            width: 100%; 
+            max-width: 100%;
+            float: right;
+            @media #{$sm-layout} {
+                width: 100%; 
+                float: inherit;  
+                max-width: 100%;
+            }
             img {
-                margin-left: 15px;
-                margin-top: -10px;
-                margin-bottom: 1em;
+                margin-left: 0;
+                margin-top: -60px;
+                margin-bottom: 0;
+                @media #{$sm-layout} {
+                    margin-bottom: 1em;
+                    margin-top: -10px;
+                    margin-left: 15px;
+                }
             }
         }
         .content-holder {
-            padding: 5px 15px 30px;
+            padding: 5px 30px 30px 15px;
+            @media #{$sm-layout} {
+                padding: 5px 15px 30px;
+            }
             p {
                 font-size: 12px!important;
                 line-height: 1.3em!important;
@@ -610,10 +875,18 @@ a.button {
                 &.date {
                     font-weight: 400;
                     position: inherit;
+                    font-size: 16px!important;
+                    @media #{$sm-layout} {
+                        font-size: 14px!important;
+                    }
                 }
                 &.author {
                     position: inherit;
                     width: inherit;
+                    font-size: 16px!important;
+                    @media #{$sm-layout} {
+                        font-size: 14px!important;
+                    }
                     span {
                         font-size: inherit;
                         font-weight: inherit;
@@ -625,19 +898,31 @@ a.button {
                 &.blog-text {
                     display: inherit;
                     font-weight: normal;  
-                    font-size: 14px!important;
-                    line-height: 22px!important; 
+                    font-size: 16px!important;
+                    line-height: 23px!important; 
+                    @media #{$sm-layout} {
+                        font-size: 14px!important;
+                        line-height: 22px!important; 
+                    } 
                 }
             }
             h2 {
-                font-size: 22px;
-                line-height: 20px;
+                font-size: 32px;
+                line-height: 32px;
                 margin: 0 0 .5em;
+                @media #{$sm-layout} {
+                    font-size: 22px;
+                    line-height: 20px;
+                }
             }
             h3 {
                 text-transform: uppercase;
-                font-size: 10px;
+                font-size: 12px;
                 line-height: 1.6em;
+                @media #{$sm-layout} {
+                    font-size: 10px;
+                    line-height: 1.6em;
+                }
                 letter-spacing: 1.5px;
                 font-weight: normal;
                 margin: 15px 0 2px;
@@ -653,12 +938,30 @@ a.button {
 /*=========================
     Press Items
 ==========================*/
-
+.pressroom-inner.cssgrid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    @media #{$sm-layout} {
+        display: inherit;
+    }
+}
 .press-item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 calc(33.3% - 1.5em);
+    flex: 0 1 calc(33.3% - 1.5em);
     position: relative;
     margin-top: 2em;
     margin-left: -5px;
     margin-bottom: 10px;
+    @media #{$sm-layout} {
+        display: inherit;
+    }
     &:before{
         content: '';
         width: 40px;
@@ -667,8 +970,16 @@ a.button {
         position: absolute;
     }
     .image-holder {
-        height: 115px;
-        width: 115px;
+        height: inherit;
+        min-height: 300px;
+        max-width: 450px;
+        width: 100%;
+        @media #{$sm-layout} {
+            position: inherit;
+            min-height: inherit;
+            height: 115px;
+            width: 115px;
+        }
         img {
             width: 100%;
             margin-left: 15px;
@@ -681,8 +992,11 @@ a.button {
         background-color: white;
     }
     .text-holder {
-        padding: 5px 15px 5px;
+        padding: 15px 15px 5px;
         background-color: white;
+        @media #{$sm-layout} {
+            padding: 5px 15px 5px;
+        }
         p {
             font-size: 12px!important;
             line-height: 1.3em!important;
@@ -691,9 +1005,14 @@ a.button {
             
             &.date {
                 font-weight: 400;
-                position: absolute;
+                position: inherit;
                 left: 142px;
                 top: -4px;
+                font-size: 16px !important;
+                @media #{$sm-layout} {
+                    font-size: 12px !important;
+                    position: absolute;
+                }
             }
             &.author {
                 position: absolute;
@@ -717,11 +1036,17 @@ a.button {
             }
         }
         h2 {
-            font-size: 14px;
-            line-height: 16px;
-            margin: 0 30px .5em 127px;
-            position: absolute;
             top: 14px;
+            font-size: 32px;
+            line-height: 32px;
+            margin: 0 0 .5em;
+            position: inherit;
+            @media #{$sm-layout} { 
+                font-size: 14px;
+                line-height: 16px;
+                margin: 0 30px .5em 127px;
+                position: absolute;
+            }
         }
         h3 {
             text-transform: uppercase;
@@ -737,7 +1062,11 @@ a.button {
         .image-holder {
             height: inherit;
             min-height: 300px;
+            max-width: 450px;
             width: 100%;
+            @media #{$sm-layout} { 
+                max-width: 100%;
+            }
             img {
                 margin-left: 15px;
                 margin-top: -10px;
@@ -754,6 +1083,10 @@ a.button {
                 &.date {
                     font-weight: 400;
                     position: inherit;
+                    font-size: 16px !important;
+                    @media #{$sm-layout} {
+                        font-size: 12px !important;
+                    }
                 }
                 &.author {
                     position: inherit;
@@ -769,20 +1102,32 @@ a.button {
                 &.press-text {
                     display: inherit;
                     font-weight: normal;  
-                    font-size: 14px!important;
-                    line-height: 22px!important; 
+                    font-size: 16px!important;
+                    line-height: 23px!important; 
+                    @media #{$sm-layout} {
+                        font-size: 14px!important;
+                        line-height: 22px!important; 
+                    } 
                 }
             }
             h2 {
-                font-size: 22px;
-                line-height: 20px;
+                font-size: 32px;
+                line-height: 32px;
                 margin: 0 0 .5em;
+                @media #{$sm-layout} {
+                    font-size: 22px;
+                    line-height: 20px;
+                }
                 position: inherit;
             }
             h3 {
                 text-transform: uppercase;
-                font-size: 10px;
+                font-size: 12px;
                 line-height: 1.6em;
+                @media #{$sm-layout} {
+                    font-size: 10px;
+                    line-height: 1.6em;
+                }
                 letter-spacing: 1.5px;
                 font-weight: normal;
                 margin: 15px 0 2px;
@@ -825,13 +1170,25 @@ a.button {
 
 
 form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media #{$sm-layout} {
+        display: inherit;
+    }
     &.on-yellow {
         input {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 1 calc(33.3% - 1.5em);
+            flex: 0 1 calc(50% - 1.5em);
             border: none;
             border-bottom: 1px solid black;
             width: 100%;
             border-radius: 0;
             margin-bottom: 1.4em;
+            @media #{$sm-layout} {
+                flex: unset;
+            }
             &::-webkit-input-placeholder {
                 color: black;
                 font-weight: bold;
@@ -1055,7 +1412,7 @@ textarea:-ms-input-placeholder {
 }
 
 [data-black-overlay]:before {
-    background-color: #00010c;
+    background-color: #000;
 }
 
 [data-white-overlay]:before {

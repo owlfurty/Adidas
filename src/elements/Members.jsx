@@ -10,7 +10,6 @@ class Members extends Component{
                 <div className="Members-wrapper">
                     <div className="container">
                         <div className="row row--35 align-items-center">
-
                             <div className="col-lg-7 col-md-12">
                                 <div className="members-inner inner">
                                     <div className="section-title">
@@ -22,22 +21,24 @@ class Members extends Component{
                         </div>
                     </div>
                     <div className="members-content">
-                        <div className="row members-pictures">
-                            <div className="col-6">
-                                <img alt="members" src="/assets/images/team/member-1@2x.png"/>
-                                <p className="member">{member}</p>
-                            </div>
-                            <div className="col-6">
-                                <img alt="members" src="/assets/images/team/member-2@2x.png"/>
-                                <p className="member">{member}</p>
-                            </div>
-                            <div className="col-6">
-                                <img alt="members" src="/assets/images/team/member-3@2x.png"/>
-                                <p className="member">{member}</p>
-                            </div>
-                            <div className="col-6">
-                                <img alt="members" src="/assets/images/team/member-4@2x.png"/>
-                                <p className="member">{member}</p>
+                        <div className="container">
+                            <div className="row members-pictures">
+                                <div className="col-6 col-lg-3">
+                                    <img alt="members" src="/assets/images/team/member-1@2x.png"/>
+                                    <p className="member">{member}</p>
+                                </div>
+                                <div className="col-6 col-lg-3">
+                                    <img alt="members" src="/assets/images/team/member-2@2x.png"/>
+                                    <p className="member">{member}</p>
+                                </div>
+                                <div className="col-6 col-lg-3">
+                                    <img alt="members" src="/assets/images/team/member-3@2x.png"/>
+                                    <p className="member">{member}</p>
+                                </div>
+                                <div className="col-6 col-lg-3">
+                                    <img alt="members" src="/assets/images/team/member-4@2x.png"/>
+                                    <p className="member">{member}</p>
+                                </div>
                             </div>
                         </div>
 

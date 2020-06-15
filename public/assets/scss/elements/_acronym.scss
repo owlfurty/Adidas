@@ -118,10 +118,6 @@
     }
 }
 
-.paragraph p {
-    font-size: 14px;
-    line-height: 22px;
-}
 
 .acronym-inner {
     .title {
@@ -153,6 +149,9 @@
 
 .acronym-area {
     padding-bottom: 3em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .acronym-wrapper {

@@ -9,12 +9,12 @@ class Architecture extends Component{
         readMore = 'everything about MACH technology';
         return(
             <React.Fragment>
-                <div className="Architecture-wrapper">
+                <div className="architecture-wrapper">
                     <div className="container">
                         <div className="row row--35 align-items-center">
 
-                            <div className="col-lg-7 col-md-12">
-                                <div className="Architecture-inner inner">
+                            <div className="col-lg-8 col-md-12">
+                                <div className="architecture-inner inner">
                                     <div className="section-title">
                                         <h3 className="category">{category}</h3>
                                     </div>

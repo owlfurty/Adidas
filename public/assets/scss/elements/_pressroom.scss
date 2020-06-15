@@ -118,11 +118,6 @@
     }
 }
 
-.paragraph p {
-    font-size: 14px;
-    line-height: 22px;
-}
-
 .pressroom-inner {
     
     .title {
@@ -158,8 +153,8 @@
     &::before {
         position: absolute;
         height: 200px;
-        width: 150px;
-        right: 0;
+        width: 240px;
+        right: -80px;
         top: 0;
         display: block;
         content: '';

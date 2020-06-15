@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="151px" height="197px" viewBox="0 0 151 197" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="240px" height="197px" viewBox="0 0 240 197" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Rectangle Copy</title>
     <g id="templates" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="homepage" transform="translate(0.000000, -3151.000000)" fill="#FFD100">
-            <g id="the-board" transform="translate(-129.000000, 2923.000000)">
-                <polygon id="Rectangle-Copy" transform="translate(158.500000, 386.500000) rotate(-45.000000) translate(-158.500000, -386.500000) " points="48 330.314745 269 274 216.626436 499"></polygon>
-            </g>
-        </g>
+        <polygon id="Rectangle-Copy" fill="#FFD100" transform="translate(118.500000, 158.500000) rotate(-45.000000) translate(-118.500000, -158.500000) " points="8 102.314745 229 46 176.626436 271"></polygon>
     </g>
 </svg>

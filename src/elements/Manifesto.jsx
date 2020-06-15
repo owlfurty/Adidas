@@ -15,7 +15,7 @@ class Manifesto extends Component{
                     <div className="container">
                         <div className="row row--35 align-items-center">
 
-                            <div className="col-lg-7 col-md-12">
+                            <div className="col-lg-8 col-md-12">
                                 <div className="manifesto-inner inner">
                                     <div className="section-title">
                                         <h3 className="category">{category}</h3>
@@ -25,12 +25,14 @@ class Manifesto extends Component{
                             </div>
                         </div>
                     </div>
-                    <div className="quote-thumb">
-                        <p className="text-white text-italic">{quoteThumb}</p>
+                    <div className="container-desktop">
+                        <div className="quote-thumb">
+                            <p className="text-white text-italic">{quoteThumb}</p>
+                        </div>
                     </div>
                     <div className="container">
                         <div className="row row--35 align-items-center">
-                            <div className="col-lg-7 col-md-12">
+                            <div className="col-lg-8 col-md-12">
                                 <div className="paragraph">
                                     <p className="body-text">{paragraphOne}</p>
                                     <p className="body-text">{paragraphTwo}</p>

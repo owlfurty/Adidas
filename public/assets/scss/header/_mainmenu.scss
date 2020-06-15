@@ -15,8 +15,9 @@ Mainmenu Area
                 > a {
                     @extend %transition;
                     color: #c6c9d8;
-                    font-size: 16px;
-                    font-weight: 500;
+                    font-size: 13px;
+                    text-transform: uppercase;
+                    font-weight: bold;
                     padding: 20px 0;
                     display: inline-block;
                 }

@@ -19,7 +19,7 @@ class Acronym extends Component{
                     <div className="container">
                         <div className="row row--35 align-items-center">
 
-                            <div className="col-lg-7 col-md-12">
+                            <div className="col-lg-6 col-md-12">
                                 <div className="acronym-inner inner">
                                     <div className="section-title">
                                         <h3 className="category">{category}</h3>
@@ -45,7 +45,7 @@ class Acronym extends Component{
 
                     <div className="container">
                         <div className="row row--35 align-items-center">
-                            <div className="col-lg-7 col-md-12">
+                            <div className="col-lg-6 col-md-12">
                                 <div className="paragraph">
                                     <p className="body-text">{paragraphTwo}</p>
                                     <p className="body-text">{paragraphThree}</p>

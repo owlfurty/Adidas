@@ -17,8 +17,9 @@ export default class MyForm extends React.Component {
     const { status } = this.state;
     return (
         <div className="signup-wrapper">
+          <div className="container">
             <div className="row row--35 align-items-center">
-                <div className="col-lg-7 col-md-12">
+                <div className="col-lg-12 col-md-12">
                     <div className="signup-inner inner">
                         <div className="section-title">
                             <h3 className="category">SIGN UP NOW</h3>
@@ -41,6 +42,7 @@ export default class MyForm extends React.Component {
                     </div>
                 </div>
             </div>
+          </div>
         </div>
       
     );

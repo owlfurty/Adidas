@@ -1,7 +1,11 @@
 /*====================
     About Area 
 ======================*/
-
+.about-area {
+    @media #{$sm-layout} {
+        padding-bottom: 5em;
+    }
+}
 .rn-finding-us-area {
     .inner {
         position: relative;
@@ -126,6 +130,7 @@
         padding-top: 1em;
     }
     .section-title{
+        margin-top: 0;
         p{
             &.description{
                 font-weight: 400;

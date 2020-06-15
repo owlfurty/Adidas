@@ -2,6 +2,7 @@ import React, { Component , Fragment } from "react";
 import Header from "../component/header/Header";
 
 import SliderOne from "../component/slider/SliderOne";
+// import SliderVideo from "../component/slider/SliderVideo";
 
 import About from "../component/HomeLayout/homeOne/About";
 import Manifesto from "../elements/Manifesto";
@@ -13,10 +14,13 @@ import Insights from "../elements/Insights";
 import Pressroom from "../elements/Pressroom";
 import Mediacontacts from "../elements/Mediacontacts";
 import Mediamentions from "../elements/Mediamentions";
+import Events from "../elements/Events";
 import MyForm from "../elements/MyForm"
 import Getintouch from "../elements/Getintouch"
 
 import Helmet from "../component/common/Helmet";
+
+import Footer from "../component/footer/Footer";
 
 class MainDemo extends Component{
     render(){
@@ -26,6 +30,8 @@ class MainDemo extends Component{
 
                 <Header headertransparent="header--transparent" colorblack="color--black" logoname="logo.png" />
 
+                    
+
                 {/* Start Slider Area   */}
                 <div className="slider-wrapper">
                     <SliderOne />
@@ -34,7 +40,7 @@ class MainDemo extends Component{
                 
 
                 {/* Start About Area */}
-                <div className="about-area about-position-top pb--120 linend">
+                <div className="about-area about-position-top linend">
                     <About />
                 </div>
                 {/* End About Area */}
@@ -58,7 +64,7 @@ class MainDemo extends Component{
                 {/* End Architecture Area */}
 
                 {/* Start Theboard Area */}
-                <div className="theboard-area theboard-position-top">
+                <div className="theboard-area theboard-position-top container-desktop">
                     <Theboard />
                 </div>
                 {/* End Theboard Area */}
@@ -88,8 +94,14 @@ class MainDemo extends Component{
                 {/* End Mediacontacts Area */}
 
                 {/* Start Mediamentions Area */}
-                <div className="mediamentions-area mediamentions-position-top linend">
+                <div className="mediamentions-area mediamentions-position-top">
                     <Mediamentions />
+                </div>
+                {/* End Mediamentions Area */}
+
+                {/* Start Events Area */}
+                <div className="events-area events-position-top ">
+                    <Events />
                 </div>
                 {/* End Mediamentions Area */}
                 
@@ -100,10 +112,12 @@ class MainDemo extends Component{
                 {/* End MyForm Area */}
 
                 {/* Start Getintouch Area */}
-                <div className="getintouch-area getintouch-position-top linend">
+                <div className="container-desktop getintouch-area getintouch-position-top">
                     <Getintouch />
                 </div>
                 {/* End Getintouch Area */}
+
+                <Footer />
                 
             </Fragment>
             

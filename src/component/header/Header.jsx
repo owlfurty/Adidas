@@ -50,7 +50,7 @@ class Header extends Component{
         return( 
             <header className={`header-area formobile-menu header--transparent ${color}`}>
                 <div className="header-wrapper" id="header-wrapper">
-                    <div className="header-left">
+                    <div className="header-right">
                         <nav className="mainmenunav d-lg-block">
                                 <ul className="mainmenu">
                                     <li className="has-droupdown"><Link to="#">About MACH Alliance</Link></li>
@@ -70,7 +70,7 @@ class Header extends Component{
                                 <span onClick={this.CLoseMenuTrigger} className="closeTrigger"><FiX /></span>
                             </div>
                     </div>
-                    <div className="header-right">
+                    <div className="header-left">
                         <div className="logo">
                             <a href="/">
                                 {logoUrl}

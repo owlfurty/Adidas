@@ -40,7 +40,7 @@ button {
         display: inline-block;
         line-height: 50px;
         border: 1px solid $theme-color;
-        border-radius: 4px;
+        border-radius: 2px;
         font-size: 16px;
         position: relative;
         z-index: 2;
@@ -81,16 +81,15 @@ a {
     &.rn-button-style--2 {
         color: #c6c9d8;
         font-size: 16px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        border: 2px solid #b1b4c1;
+        text-transform: capitalize;
+        border: 1px solid #b1b4c1;
         padding: 15px 40px;
-        border-radius: 6px;
+        border-radius: 2px;
         display: inline-block;
-        font-weight: 500;
+        font-weight: bold;
         transition: 0.3s;
         @media #{$sm-layout} {
-            padding: 9px 25px;
+            padding: 15px 25px;
         }
         &.rn-btn-dark {
             border: 2px solid #1f1f25;

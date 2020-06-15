@@ -17,7 +17,7 @@ class Theboard extends Component{
                     <div className="container">
                         <div className="row row--35 align-items-center">
 
-                            <div className="col-lg-7 col-md-12">
+                            <div className="col-lg-8 col-md-12">
                                 <div className="theboard-inner inner">
                                     <div className="section-title">
                                         <h3 className="category">{category}</h3>
@@ -33,25 +33,25 @@ class Theboard extends Component{
                     <div className="team-content">
                         <h3 className="category">{crewOne}</h3>    
                         <div className="row team-pictures">
-                            <div className="col-6">
+                            <div className="col-6 col-lg-2">
                                 <img alt="theboard" src="/assets/images/team/team-1@2x.png"/>
                                 <p className="firstname">{firstname}</p>
                                 <p className="lastname">{lastname}</p>
                                 <p className="jobtitle">{jobtitle}</p>
                             </div>
-                            <div className="col-6">
+                            <div className="col-6 col-lg-2">
                                 <img alt="theboard" src="/assets/images/team/team-2@2x.png"/>
                                 <p className="firstname">{firstname}</p>
                                 <p className="lastname">{lastname}</p>
                                 <p className="jobtitle">{jobtitle}</p>
                             </div>
-                            <div className="col-6">
+                            <div className="col-6 col-lg-2">
                                 <img alt="theboard" src="/assets/images/team/team-3@2x.png"/>
                                 <p className="firstname">{firstname}</p>
                                 <p className="lastname">{lastname}</p>
                                 <p className="jobtitle">{jobtitle}</p>
                             </div>
-                            <div className="col-6">
+                            <div className="col-6 col-lg-2">
                                 <img alt="theboard" src="/assets/images/team/team-4@2x.png"/>
                                 <p className="firstname">{firstname}</p>
                                 <p className="lastname">{lastname}</p>
@@ -61,13 +61,13 @@ class Theboard extends Component{
 
                         <h3 className="category crewtwo">{crewTwo}</h3>    
                         <div className="row team-pictures">
-                            <div className="col-6">
+                            <div className="col-6 col-lg-2">
                                 <img alt="theboard" src="/assets/images/team/advisory-1@2x.png"/>
                                 <p className="firstname">{firstname}</p>
                                 <p className="lastname">{lastname}</p>
                                 <p className="jobtitle">{jobtitle}</p>
                             </div>
-                            <div className="col-6">
+                            <div className="col-6 col-lg-2">
                                 <img alt="theboard" src="/assets/images/team/advisory-2@2x.png"/>
                                 <p className="firstname">{firstname}</p>
                                 <p className="lastname">{lastname}</p>

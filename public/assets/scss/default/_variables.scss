@@ -72,8 +72,32 @@ $small-mobile: 'only screen and (max-width: 479px)';
     }
 }
 
+.container-desktop {
+    max-width: 1220px!important;
+    margin: 0 auto;
+    width: 100%;
+    @media #{$small-mobile} {
+        width: 100%;
+    }    
+    &.p--30,
+    .p--30 {
+        padding: 0;
+        @media #{$small-mobile} {
+            padding: 0 30px;
+        }  
+    }
+}
+.container {
+    max-width: 1220px!important;
+    padding-right: 75px;
+    padding-left: 75px;
+    @media #{$sm-layout} {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
 @media #{$small-mobile} {
     .container {
-        width: 400px;
+        width: 100%;
     }
 }

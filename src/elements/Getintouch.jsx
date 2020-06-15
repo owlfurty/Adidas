@@ -25,7 +25,6 @@ class Getintouch extends Component{
                     </div>
                                        
                 </div>
-                <div className="getintouch-footer"><p>Copyright © 2020 MACH Alliance. <br/> All Rights Reserved.</p></div>
             </React.Fragment>
         )
     }
