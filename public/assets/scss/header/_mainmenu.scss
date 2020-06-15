@@ -14,12 +14,16 @@ Mainmenu Area
                 position: relative;
                 > a {
                     @extend %transition;
-                    color: #c6c9d8;
+                    color: #fff;
                     font-size: 13px;
+                    letter-spacing: 1px;
                     text-transform: uppercase;
                     font-weight: bold;
                     padding: 20px 0;
                     display: flex;
+                    &.active {
+                        text-decoration: underline;
+                    }
                 }
                 > ul {
                     &.submenu {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FiX , FiMenu } from "react-icons/fi";
 
 
@@ -53,13 +53,13 @@ class Header extends Component{
                     <div className="header-right">
                         <nav className="mainmenunav d-lg-block">
                                 <ul className="mainmenu">
-                                    <li className="has-droupdown"><Link to="#">About MACH Alliance</Link></li>
-                                    <li className="has-droupdown"><Link to="/manifesto" >Manifesto</Link></li>
-                                    <li><Link to="/about" >Mach Technology</Link></li>
-                                    <li className="has-droupdown"><Link to="#pages" >Insights</Link></li>
-                                    <li className="has-droupdown"><Link to="#" >Newsroom</Link></li>
-                                    <li><Link to="/contact" >Events</Link></li>
-                                    <li><Link className="buttony" to="/contact" >Sign up</Link></li>
+                                    <li><NavLink to="/about">About MACH Alliance</NavLink></li>
+                                    <li><NavLink to="/manifesto" >Manifesto</NavLink></li>
+                                    <li><NavLink to="/mach-technology" >Mach Technology</NavLink></li>
+                                    <li><NavLink to="/insights" >Insights</NavLink></li>
+                                    <li><NavLink to="/newsroom" >Newsroom</NavLink></li>
+                                    <li><NavLink to="/events" >Events</NavLink></li>
+                                    <li><NavLink className="buttony" to="/contact" >Sign up</NavLink></li>
                                 </ul>
                             </nav>
                             {/* Start Humberger Menu  */}

@@ -137,7 +137,19 @@ body {
     @extend %bgImagePosition;
 }
 
-
+.white-space {
+    background: white;
+    position: absolute;
+    width: 100%;
+    height: 108px;
+    position: relative;
+    display: flex;
+    bottom: 0;
+    max-width: 1220px;
+    z-index: 9;
+    bottom: 0;
+    align-self: center;
+}
 @for $i from 1 through 30 {
     .bg_image--#{$i} {
         background-image: url(/assets/images/hero-a3d8817377163.gif);
@@ -281,6 +293,17 @@ h3.category {
     }
 }
 
+.sub-hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h1.title {
+        color: white;
+        font-size: 72px;
+        line-height: 86px;
+    }
+}
 .logo {
     img {
         width: 113px;

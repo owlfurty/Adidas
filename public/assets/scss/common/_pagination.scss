@@ -5,6 +5,7 @@
 .rn-pagination{
     ul{
         &.page-list{
+            display: none;
             @extend %liststyle;
             li {
                 display: inline-block;

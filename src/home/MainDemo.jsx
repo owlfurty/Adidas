@@ -5,7 +5,7 @@ import SliderOne from "../component/slider/SliderOne";
 // import SliderVideo from "../component/slider/SliderVideo";
 
 import About from "../component/HomeLayout/homeOne/About";
-import Manifesto from "../elements/Manifesto";
+import ManifestoComp from "../elements/ManifestoComp";
 import Acronym from "../elements/Acronym";
 import Architecture from "../elements/Architecture";
 import Theboard from "../elements/Theboard";
@@ -36,18 +36,17 @@ class MainDemo extends Component{
                 </div>
                 {/* End Slider Area   */}
                 
-
                 {/* Start About Area */}
                 <div className="about-area about-position-top linend">
                     <About />
                 </div>
                 {/* End About Area */}
 
-                {/* Start Manifesto Area */}
+                {/* Start ManifestoComp Area */}
                 <div className="manifesto-area manifesto-position-top linend">
-                    <Manifesto />
+                    <ManifestoComp />
                 </div>
-                {/* End Manifesto Area */}
+                {/* End ManifestoComp Area */}
 
                 {/* Start Acronym Area */}
                 <div className="acronym-area acronym-position-top linend">
