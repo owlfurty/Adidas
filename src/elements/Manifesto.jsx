@@ -8,17 +8,43 @@ import { FiChevronUp } from "react-icons/fi";
 import ManifestoComp from "../elements/ManifestoComp";
 
 class Manifesto extends Component{
-    constructor () {
+    constructor(){
         super()
-        this.state = {
-          isOpen: false
-        }
-        this.openModal = this.openModal.bind(this)
+
+        this.state = { isLoading : true, manifesto: null}
     }
-    openModal () {
-        this.setState({isOpen: true})
+
+    componentDidMount(){
+        this.getManifest()
     }
+
+    getManifest = () => {
+        fetch('https://cdn.contentstack.io/v3/content_types/manifesto/entries?environment=development&locale=en-us', {
+            method:'get',
+            mode:'cors',
+            headers:{
+                api_key:'bltb9eff0ec0532965e',
+                access_token:'csbcb89082a35b960cf9d10e11',
+                Accept: "*/*"
+            }
+        })
+        .then((response)=> {
+            return response.json()
+        })
+        .then((json) => {
+            this.setState({manifesto:json.entries[0], isLoading:false})
+        })
+    }
+
+
     render(){
+        let category = 'Manifesto'
+        const { isLoading, manifesto} = this.state
+
+        if( isLoading ){
+            return null
+        }
+
         return(
             <React.Fragment>
                 <PageHelmet pageTitle='Manifesto' />
@@ -49,7 +75,45 @@ class Manifesto extends Component{
                 {/* Start Manifesto */}
                 <div className="rn-blog-details pb--70 bg_color--1">
                     {/* Start ManifestoComp Area */}
-                     <ManifestoComp />
+                     {/* <ManifestoComp /> */}
+                     <div className="manifesto-wrapper">
+                    <div className="container">
+                        <div className="row row--35 align-items-center">
+
+                            <div className="col-lg-8 col-md-12">
+                                <div className="manifesto-inner inner">
+                                    <div className="section-title">
+                                        <h3 className="category">{category}</h3>
+                                        <h6 className="quote-title"> {manifesto.title}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="container-desktop">
+                        <div className="quote-thumb">
+                            <p className="text-white text-italic">
+                                {manifesto.quote_thumb}
+                            </p>
+                        </div>
+                    </div>
+                    <div className="container">
+                        <div className="row row--35 align-items-center">
+                            <div className="col-lg-8 col-md-12">
+                                <div className="paragraph">
+                                    <p className="summary">
+                                    {manifesto.summary}
+                                    </p>
+                                    <div className="body-text" dangerouslySetInnerHTML={{ __html: manifesto.full_text} } />
+                                    <a className="text-link" href="/">
+                                    {manifesto.read_more}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
                     {/* End ManifestoComp Area */}
                     
                 </div>
