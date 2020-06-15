@@ -54,11 +54,12 @@ class Header extends Component{
                         <nav className="mainmenunav d-lg-block">
                                 <ul className="mainmenu">
                                     <li className="has-droupdown"><Link to="#">About MACH Alliance</Link></li>
-                                    <li className="has-droupdown"><Link to="/service" >Manifesto</Link></li>
+                                    <li className="has-droupdown"><Link to="/manifesto" >Manifesto</Link></li>
                                     <li><Link to="/about" >Mach Technology</Link></li>
                                     <li className="has-droupdown"><Link to="#pages" >Insights</Link></li>
                                     <li className="has-droupdown"><Link to="#" >Newsroom</Link></li>
                                     <li><Link to="/contact" >Events</Link></li>
+                                    <li><Link className="buttony" to="/contact" >Sign up</Link></li>
                                 </ul>
                             </nav>
                             {/* Start Humberger Menu  */}
@@ -67,6 +68,7 @@ class Header extends Component{
                             </div>
                             {/* End Humberger Menu  */}
                             <div className="close-menu d-block d-lg-none">
+
                                 <span onClick={this.CLoseMenuTrigger} className="closeTrigger"><FiX /></span>
                             </div>
                     </div>

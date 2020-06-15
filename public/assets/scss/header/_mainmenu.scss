@@ -19,7 +19,7 @@ Mainmenu Area
                     text-transform: uppercase;
                     font-weight: bold;
                     padding: 20px 0;
-                    display: inline-block;
+                    display: flex;
                 }
                 > ul {
                     &.submenu {

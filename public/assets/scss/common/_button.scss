@@ -65,6 +65,7 @@ button {
     }
     &.home-btn {
         top: 1em;
+        left: 80%;
         @media #{$sm-layout} {
             position: absolute;
             top: inherit;
@@ -73,6 +74,19 @@ button {
             right: 16px;
         }
     }
+}
+
+.buttony {
+    background: $brand-yellow;
+    display: inline-block;
+    padding: 0 20px!important;
+    height: 40px;
+    border-radius: 5px;
+    line-height: 40px;
+    margin: 11px 0 0 30px;
+    color: black!important;
+    font-size: 12px;
+    letter-spacing: 3px;
 }
 
 

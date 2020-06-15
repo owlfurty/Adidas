@@ -30,8 +30,6 @@ class MainDemo extends Component{
 
                 <Header headertransparent="header--transparent" colorblack="color--black" logoname="logo.png" />
 
-                    
-
                 {/* Start Slider Area   */}
                 <div className="slider-wrapper">
                     <SliderOne />
