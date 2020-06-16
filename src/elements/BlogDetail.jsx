@@ -17,7 +17,6 @@ class BlogDetail extends Component {
         this.uid = props.match.params.uid
         this.blogpost = props.location.blogpost
 
-        console.log('blogpost: ', this.blogpost)
         this.state = { loading : true, blog: null}
     }
 
@@ -42,7 +41,13 @@ class BlogDetail extends Component {
 
     componentDidMount(){
         this.getBlog(this.uid)
+    }
 
+    componentWillReceiveProps(){
+        if(this.props.location.pathname !== this.props.history.location.pathname ){
+            this.getBlog(this.props.history.location.blogpost.uid)
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth' })
+        }
     }
 
     render(){
@@ -51,8 +56,6 @@ class BlogDetail extends Component {
         if ( loading ) {
             return null;
         }
-
-        let tagsList = blog.tags?.join(",")
         return (
 
             <React.Fragment>
