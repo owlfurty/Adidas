@@ -46,15 +46,22 @@ class Theboard extends Component{
             let lastname = member.title.replace(firstname + " ", "")
             return (
                 <div className="col-6 col-lg-2">
-                    <img alt="theboard" src={member.headshot?.url}/>
+                    <img alt="theboard" src={member.headshot.url}/>
                     <p className="firstname">{firstname}</p>
                     <p className="lastname">{lastname}</p>
                     <p className="jobtitle">{member.role}</p>
                 </div>
             )
         })
-
-
+        let
+        category = 'Theboard',
+        title = 'Together freeing up technology.',
+        paragraphOne = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit velit elit. Aliquam blandit rhoncus fermentum. Donec mollis vehicula arcu quis interdum. Nullam euismod volutpat porttitor.',
+        firstname = 'Kelly',
+        lastname = 'Goetsch',
+        jobtitle = 'President',
+        crewOne = 'Board',
+        crewTwo = 'Advisory board';
         return(
             <React.Fragment>
                 <div className="theboard-wrapper">
