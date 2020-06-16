@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 
-class Pressroom extends Component{
+class PressroomComp extends Component{
 
     state = {entries: [], isLoading:true}
 
@@ -33,7 +33,7 @@ class Pressroom extends Component{
         if ( isLoading ) {
             return null;
         }
-        let category = 'The Newsroom'
+        let category = 'Pressroom'
         let sortedEntries = entries.sort((a, b) => b.date - a.date)
         let componentsList = sortedEntries.map((pressRelease) => {
             const newTo = { 
@@ -89,12 +89,13 @@ class Pressroom extends Component{
                                 </div>
                             </div>
 
-                            <div className="col-12 pb--100">
+                            <div className="col-12">
                                 <div className="pressroom-inner inner cssgrid">
                                     {componentsList}
                                 </div>
                             </div>
                         </div>
+                        <a class="button" href="/newsroom">Show all</a>
                     </div>   
                 </div>
                 
@@ -102,4 +103,4 @@ class Pressroom extends Component{
         )
     }
 }
-export default Pressroom;
+export default PressroomComp;

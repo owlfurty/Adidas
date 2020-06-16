@@ -65,7 +65,7 @@ class Header extends Component{
                                 <li><NavLink to="/mach-technology" >Mach Technology</NavLink></li>
                                 <li><NavLink to="/insights" >Insights</NavLink></li>
                                 <li><NavLink to="/newsroom" >Newsroom</NavLink></li>
-                                <li><NavLink to="/events" >Events</NavLink></li>
+                                {/* <li><NavLink to="/events" >Events</NavLink></li> */}
                                 {/* <li><a className="buttony" href="/#signup" >Sign up</a></li> */}
                             </ul>
                         </nav>

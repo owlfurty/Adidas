@@ -13,7 +13,7 @@ import CrewComp from "../elements/CrewComp";
 
 import Members from "../elements/Members";
 import InsightsComp from "../elements/InsightsComp";
-import Pressroom from "../elements/Pressroom";
+import PressroomComp from "../elements/PressroomComp";
 import Mediacontacts from "../elements/Mediacontacts";
 import Mediamentions from "../elements/Mediamentions";
 import Events from "../elements/Events";
@@ -86,11 +86,11 @@ class MainDemo extends Component{
                 </div>
                 {/* End Insights Area */}
 
-                {/* Start Pressroom Area */}
+                {/* Start PressroomComp Area */}
                 <div className="pressroom-area pressroom-position-top linend">
-                    <Pressroom />
+                    <PressroomComp />
                 </div>
-                {/* End Pressroom Area */}
+                {/* End PressroomComp Area */}
 
                 {/* Start Mediacontacts Area */}
                 <div className="mediacontacts-area mediacontacts-position-top linend">
