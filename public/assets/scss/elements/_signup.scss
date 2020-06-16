@@ -191,13 +191,13 @@
     &:after {
         content: "";
         background: url(/assets/images/brand/ovalright-black.svg) no-repeat;
-        width: 157px;
+        width: 255px;
         height: 255px;
         display: inline-block;
         position: absolute;
         z-index: 9;
         bottom: -160px;
-        right: 0;
+        right: -100px;
     }
 }
 

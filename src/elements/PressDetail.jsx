@@ -5,7 +5,6 @@ import { FiChevronUp } from "react-icons/fi";
 import Header from "../component/header/Header";
 import Footer from "../component/footer/Footer";
 import { IoMdCalendar } from "react-icons/io";
-import { IoMdCreate } from "react-icons/io";
 import Pressroom from "../elements/Pressroom";
 
 class PressDetail extends Component {
@@ -76,13 +75,6 @@ class PressDetail extends Component {
                                 </div>
                             </div>
                         </div>
-                        {/* Start Home CTA */}
-                        {/* <div className="header-btn">
-                            <a className="rn-btn home-btn" target="blank" href="https://airtable.com/shr4tKK2Kduhj84iM">
-                                <span>Sign up</span>
-                            </a>
-                        </div> */}
-                                {/* End Home CTA */}
                     </div>
                     <div className="white-space">
                         <ul className="page-list">

@@ -149,16 +149,16 @@
            
         }
     }
-    &:after {
-        content: "";
-        background-image: url(/assets/images/brand/oval.svg);
-        width: 185px;
-        height: 322px;
-        display: inline-block;
-        position: absolute;
-        margin-top: 1em;
-        z-index: -999;
-    }
+    // &:after {
+    //     content: "";
+    //     background-image: url(/assets/images/brand/oval.svg);
+    //     width: 185px;
+    //     height: 322px;
+    //     display: inline-block;
+    //     position: absolute;
+    //     margin-top: 1em;
+    //     z-index: -999;
+    // }
 }
 
 .about-position-top {

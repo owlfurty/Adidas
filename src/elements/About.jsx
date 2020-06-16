@@ -95,8 +95,7 @@ class About extends Component{
                         <div className="row row--35 align-items-center">
                             <div className="col-lg-8 col-md-12">
                                 <div className="paragraph">
-                                    <span className="body-summary" dangerouslySetInnerHTML={{ __html: about.summary} } />
-                                    <span className="body-text" dangerouslySetInnerHTML={{ __html: about.full_text} } />
+                                    <p className="body-text" dangerouslySetInnerHTML={{ __html: about.full_text} } />
                                 </div>
                             </div>
                         </div>

@@ -51,34 +51,33 @@ class Header extends Component{
             <header className={`header-area formobile-menu header--transparent ${color}`}>
                 <div className="header-wrapper" id="header-wrapper">
                     <div className="header-right">
-                        <nav className="mainmenunav d-lg-block">
-                                <ul className="mainmenu">
-                                    <li><NavLink to="/about">About MACH Alliance</NavLink></li>
-                                    <li><NavLink to="/manifesto" >Manifesto</NavLink></li>
-                                    <li><NavLink to="/mach-technology" >Mach Technology</NavLink></li>
-                                    <li><NavLink to="/insights" >Insights</NavLink></li>
-                                    <li><NavLink to="/newsroom" >Newsroom</NavLink></li>
-                                    <li><NavLink to="/events" >Events</NavLink></li>
-                                    <li><a className="buttony" href="/#signup" >Sign up</a></li>
-                                </ul>
-                            </nav>
-                            {/* Start Humberger Menu  */}
-                            <div className="humberger-menu d-block d-lg-none pr--20">
-                                <span onClick={this.menuTrigger} className="menutrigger text-white"><FiMenu /></span>
-                            </div>
-                            {/* End Humberger Menu  */}
-                            <div className="close-menu d-block d-lg-none">
-
-                                <span onClick={this.CLoseMenuTrigger} className="closeTrigger"><FiX /></span>
-                            </div>
-                    </div>
-                    <div className="header-left">
                         <div className="logo">
                             <a href="/">
                                 {logoUrl}
                             </a>
                         </div>
-                        
+                    </div>
+                    <div className="header-left">
+                        <nav className="mainmenunav d-lg-block">
+                            <ul className="mainmenu">
+                                <li><NavLink to="/about">About MACH Alliance</NavLink></li>
+                                <li><NavLink to="/manifesto" >Manifesto</NavLink></li>
+                                <li><NavLink to="/mach-technology" >Mach Technology</NavLink></li>
+                                <li><NavLink to="/insights" >Insights</NavLink></li>
+                                <li><NavLink to="/newsroom" >Newsroom</NavLink></li>
+                                <li><NavLink to="/events" >Events</NavLink></li>
+                                {/* <li><a className="buttony" href="/#signup" >Sign up</a></li> */}
+                            </ul>
+                        </nav>
+                        {/* Start Humberger Menu  */}
+                        <div className="humberger-menu d-block d-lg-none pr--20">
+                            <span onClick={this.menuTrigger} className="menutrigger text-white"><FiMenu /></span>
+                        </div>
+                        {/* End Humberger Menu  */}
+                        <div className="close-menu d-block d-lg-none">
+
+                            <span onClick={this.CLoseMenuTrigger} className="closeTrigger"><FiX /></span>
+                        </div>
                     </div>
                 </div>
             </header>

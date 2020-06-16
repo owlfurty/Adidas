@@ -8,7 +8,7 @@ import { FiChevronUp } from "react-icons/fi";
 import Getintouch from "../elements/Getintouch"
 import MyForm from "../elements/MyForm"
 
-class Manifesto extends Component{
+class Technology extends Component{
     constructor(){
         super()
 
@@ -20,7 +20,7 @@ class Manifesto extends Component{
     }
 
     getManifest = () => {
-        fetch('https://cdn.contentstack.io/v3/content_types/manifesto/entries?environment=development&locale=en-us', {
+        fetch('https://cdn.contentstack.io/v3/content_types/technology/entries?environment=development&locale=en-us', {
             method:'get',
             mode:'cors',
             headers:{
@@ -33,14 +33,14 @@ class Manifesto extends Component{
             return response.json()
         })
         .then((json) => {
-            this.setState({manifesto:json.entries[0], isLoading:false})
+            this.setState({technology:json.entries[0], isLoading:false})
         })
     }
 
 
     render(){
         let category = 'Mach Technology'
-        const { isLoading, manifesto} = this.state
+        const { isLoading, technology} = this.state
 
         if( isLoading ){
             return null
@@ -48,7 +48,7 @@ class Manifesto extends Component{
 
         return(
             <React.Fragment>
-                <PageHelmet pageTitle='Manifesto' />
+                <PageHelmet pageTitle='Technology' />
                 <Header headertransparent="header--transparent" colorblack="color--black" logoname="logo.png" />
                 
                 {/* Start Breadcrump Area */}
@@ -73,10 +73,10 @@ class Manifesto extends Component{
                 </div>
                 {/* End Breadcrump Area */}
 
-                {/* Start Manifesto */}
+                {/* Start Technology */}
                 <div className="rn-blog-details pb--70 bg_color--1">
-                    {/* Start ManifestoComp Area */}
-                     {/* <ManifestoComp /> */}
+                    {/* Start TechnologyComp Area */}
+                     {/* <TechnologyComp /> */}
                      <div className="manifesto-wrapper">
                     <div className="container">
                         <div className="row row--35 align-items-center">
@@ -85,25 +85,17 @@ class Manifesto extends Component{
                                 <div className="manifesto-inner inner">
                                     <div className="section-title">
                                         <h3 className="category">{category}</h3>
-                                        <h6 className="quote-title"> {manifesto.quote_title}</h6>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="container-desktop">
-                        <div className="quote-thumb">
-                            <p className="text-white text-italic">
-                                {manifesto.quote_thumb}
-                            </p>
                         </div>
                     </div>
                     <div className="container">
                         <div className="row row--35 align-items-center">
                             <div className="col-lg-8 col-md-12">
                                 <div className="paragraph">
-                                    <span className="body-summary" dangerouslySetInnerHTML={{ __html: manifesto.summary} } />
-                                    <span className="body-text" dangerouslySetInnerHTML={{ __html: manifesto.full_text} } />
+                                    <span className="body-summary" dangerouslySetInnerHTML={{ __html: technology.summary} } />
+                                    <span className="body-text" dangerouslySetInnerHTML={{ __html: technology.full_text} } />
                                 </div>
                             </div>
                         </div>
@@ -141,4 +133,4 @@ class Manifesto extends Component{
         )
     }
 }
-export default Manifesto;
+export default Technology;
