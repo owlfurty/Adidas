@@ -6,7 +6,7 @@ import SliderOne from "../component/slider/SliderOne";
 
 import About from "../component/HomeLayout/homeOne/About";
 import ManifestoComp from "../elements/ManifestoComp";
-import Acronym from "../elements/Acronym";
+import AcronymComp from "../elements/AcronymComp";
 import Architecture from "../elements/Architecture";
 import Theboard from "../elements/Theboard";
 import Members from "../elements/Members";
@@ -50,7 +50,7 @@ class MainDemo extends Component{
 
                 {/* Start Acronym Area */}
                 <div className="acronym-area acronym-position-top linend">
-                    <Acronym />
+                    <AcronymComp />
                 </div>
                 {/* End Acronym Area */}
 

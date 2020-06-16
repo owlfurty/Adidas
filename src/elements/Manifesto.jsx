@@ -5,7 +5,8 @@ import Header from "../component/header/Header";
 import Footer from "../component/footer/Footer";
 import Breadcrumb from "../elements/common/Breadcrumb";
 import { FiChevronUp } from "react-icons/fi";
-import ManifestoComp from "../elements/ManifestoComp";
+import Getintouch from "../elements/Getintouch"
+import MyForm from "../elements/MyForm"
 
 class Manifesto extends Component{
     constructor(){
@@ -84,7 +85,7 @@ class Manifesto extends Component{
                                 <div className="manifesto-inner inner">
                                     <div className="section-title">
                                         <h3 className="category">{category}</h3>
-                                        <h6 className="quote-title"> {manifesto.title}</h6>
+                                        <h6 className="quote-title"> {manifesto.quote_title}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -101,12 +102,10 @@ class Manifesto extends Component{
                         <div className="row row--35 align-items-center">
                             <div className="col-lg-8 col-md-12">
                                 <div className="paragraph">
-                                    <p className="summary">
-                                    {manifesto.summary}
-                                    </p>
+                                    <div className="body-summary" dangerouslySetInnerHTML={{ __html: manifesto.summary} } />
                                     <div className="body-text" dangerouslySetInnerHTML={{ __html: manifesto.full_text} } />
-                                    <a className="text-link" href="/">
-                                    {manifesto.read_more}
+                                    <a className="text-link" href="/manifesto">
+                                        {manifesto.read_more}
                                     </a>
                                 </div>
                             </div>
@@ -118,6 +117,18 @@ class Manifesto extends Component{
                     
                 </div>
                 {/* End Manifesto */}
+                
+                {/* Start MyForm Area */}
+                <div className="container-desktop myForm-area myForm-position-top linend">
+                    <MyForm />
+                </div>
+                {/* End MyForm Area */}
+
+                {/* Start Getintouch Area */}
+                <div className="container-desktop getintouch-area getintouch-position-top">
+                    <Getintouch />
+                </div>
+                {/* End Getintouch Area */}
 
                 {/* Start Back To Top */}
                 <div className="backto-top">

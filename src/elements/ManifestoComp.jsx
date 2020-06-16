@@ -30,7 +30,7 @@ class ManifestoComp extends Component{
         })
     }
     
-    
+
     render(){
         const { isLoading, manifesto} = this.state;
         let category = 'Manifesto'
@@ -44,12 +44,11 @@ class ManifestoComp extends Component{
                 <div className="manifesto-wrapper">
                     <div className="container">
                         <div className="row row--35 align-items-center">
-
                             <div className="col-lg-8 col-md-12">
                                 <div className="manifesto-inner inner">
                                     <div className="section-title">
                                         <h3 className="category">{category}</h3>
-                                        <h6 className="quote-title"> {manifesto.title}</h6>
+                                        <h6 className="quote-title"> {manifesto.quote_title}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -66,12 +65,9 @@ class ManifestoComp extends Component{
                         <div className="row row--35 align-items-center">
                             <div className="col-lg-8 col-md-12">
                                 <div className="paragraph">
-                                    <p className="summary">
-                                    {manifesto.summary}
-                                    </p>
-                                    <div className="body-text" dangerouslySetInnerHTML={{ __html: manifesto.full_text} } />
-                                    <a className="text-link" href="/">
-                                    {manifesto.read_more}
+                                    <div className="body-text" dangerouslySetInnerHTML={{ __html: manifesto.summary} } />
+                                    <a className="text-link" href="/manifesto">
+                                        {manifesto.read_more}
                                     </a>
                                 </div>
                             </div>
