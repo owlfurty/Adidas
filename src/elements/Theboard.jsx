@@ -5,7 +5,7 @@ class Theboard extends Component{
     constructor(){
         super()
 
-        this.state = { isLoading : true, board: null}
+        this.state = { isLoading : true, team: null}
     }
 
     componentDidMount(){
@@ -27,20 +27,41 @@ class Theboard extends Component{
         })
         .then((json) => {     
             console.log(json)       
-            this.setState({board:json.entries, isLoading:false })
+            this.setState({team:json.entries, isLoading:false })
         })
     }
 
 
     render(){
 
-        const { isLoading, board } = this.state;
+        const { isLoading, team } = this.state;
         
         if ( isLoading ) {
             return null;
         }
 
-        let boardList = board.map((member) => {
+        let boardMembers = team.filter((member)=>{
+            return member.tags.includes("board")
+        })
+
+        let advisoryMembers = team.filter((member)=>{
+            return member.tags.includes("advisory")
+        })
+
+        let boardList = boardMembers.map((member) => {
+            let firstname = member.title.split(" ")[0]
+            let lastname = member.title.replace(firstname + " ", "")
+            return (
+                <div className="col-6 col-lg-2">
+                    <img alt="theboard" src={member.headshot.url}/>
+                    <p className="firstname">{firstname}</p>
+                    <p className="lastname">{lastname}</p>
+                    <p className="jobtitle">{member.role}</p>
+                </div>
+            )
+        })
+        
+        let advisoryList = advisoryMembers.map((member) => {
             console.log(member)
             let firstname = member.title.split(" ")[0]
             let lastname = member.title.replace(firstname + " ", "")
@@ -53,6 +74,7 @@ class Theboard extends Component{
                 </div>
             )
         })
+
         let
         category = 'Theboard',
         title = 'Together freeing up technology.',
@@ -87,21 +109,10 @@ class Theboard extends Component{
                             {boardList}
                         </div>
 
-                        {/* <h3 className="category crewtwo">{crewTwo}</h3>    
+                        <h3 className="category crewtwo">{crewTwo}</h3>    
                         <div className="row team-pictures">
-                            <div className="col-6 col-lg-2">
-                                <img alt="theboard" src="/assets/images/team/advisory-1@2x.png"/>
-                                <p className="firstname">{firstname}</p>
-                                <p className="lastname">{lastname}</p>
-                                <p className="jobtitle">{jobtitle}</p>
-                            </div>
-                            <div className="col-6 col-lg-2">
-                                <img alt="theboard" src="/assets/images/team/advisory-2@2x.png"/>
-                                <p className="firstname">{firstname}</p>
-                                <p className="lastname">{lastname}</p>
-                                <p className="jobtitle">{jobtitle}</p>
-                            </div>
-                        </div> */}
+                            {advisoryList}
+                        </div>
                     </div>         
                 </div>
             </React.Fragment>
