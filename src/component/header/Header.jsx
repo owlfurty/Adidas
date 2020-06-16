@@ -59,7 +59,7 @@ class Header extends Component{
                                     <li><NavLink to="/insights" >Insights</NavLink></li>
                                     <li><NavLink to="/newsroom" >Newsroom</NavLink></li>
                                     <li><NavLink to="/events" >Events</NavLink></li>
-                                    <li><NavLink className="buttony" to="/contact" >Sign up</NavLink></li>
+                                    <li><a className="buttony" href="/#signup" >Sign up</a></li>
                                 </ul>
                             </nav>
                             {/* Start Humberger Menu  */}

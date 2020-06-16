@@ -18,6 +18,8 @@ import Contact from "./elements/Contact";
 import PortfolioDetails from "./elements/PortfolioDetails";
 import Blog from "./elements/Blog";
 import BlogDetails from "./elements/BlogDetails";
+import Insights from "./elements/Insights";
+import MachTechnology from "./elements/MachTechnology";
 import error404 from "./elements/error404";
 
 import Manifesto from "./elements/Manifesto";
@@ -57,6 +59,8 @@ class Root extends Component{
                     <Route exact path={`${process.env.PUBLIC_URL}/blog-details`} component={BlogDetails}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/manifesto`} component={Manifesto}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/blogdetail/:uid`} component={BlogDetail}/>
+                    <Route exact path={`${process.env.PUBLIC_URL}/insights`} component={Insights}/>
+                    <Route exact path={`${process.env.PUBLIC_URL}/mach-technology`} component={MachTechnology}/>
 
                     {/* Blocks Elements  */}
                     <Route exact path={`${process.env.PUBLIC_URL}/team`} component={Team}/>
@@ -70,8 +74,6 @@ class Root extends Component{
                     <Route exact path={`${process.env.PUBLIC_URL}/google-map`} component={GoogleMap}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/columns`} component={Columns}/>
 
-
-                    
                     <Route path={`${process.env.PUBLIC_URL}/404`} component={error404}/>
                     <Route component={error404}/>
 

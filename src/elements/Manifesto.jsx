@@ -102,11 +102,8 @@ class Manifesto extends Component{
                         <div className="row row--35 align-items-center">
                             <div className="col-lg-8 col-md-12">
                                 <div className="paragraph">
-                                    <div className="body-summary" dangerouslySetInnerHTML={{ __html: manifesto.summary} } />
-                                    <div className="body-text" dangerouslySetInnerHTML={{ __html: manifesto.full_text} } />
-                                    <a className="text-link" href="/manifesto">
-                                        {manifesto.read_more}
-                                    </a>
+                                    <span className="body-summary" dangerouslySetInnerHTML={{ __html: manifesto.summary} } />
+                                    <span className="body-text" dangerouslySetInnerHTML={{ __html: manifesto.full_text} } />
                                 </div>
                             </div>
                         </div>
