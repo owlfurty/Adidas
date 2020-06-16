@@ -40,7 +40,15 @@ body {
     position: absolute;
     width: 1px;
 }
-
+.press-item {
+    a {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+    }
+}
 .poss_relative {
     position: relative;
 }
