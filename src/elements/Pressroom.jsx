@@ -36,19 +36,17 @@ class Pressroom extends Component{
         let category = 'Pressroom'
         let sortedEntries = entries.sort((a, b) => b.date - a.date)
         let componentsList = sortedEntries.map((pressRelease) => {
-            console.log('pr: ', pressRelease)
-            const na = { 
+            const newTo = { 
                 pathname: `/newsdetail/${pressRelease.uid}`, 
                 pressRelease: pressRelease 
             }
             // let link = window.location + `newsdetail/${pressRelease.uid}`
 
             if ( pressRelease.hero_image !== null){
-                console.log("A")
                 let img_link = pressRelease.hero_image.url
                 return (
                     <div className="press-item">
-                        <Link to={na} alt='blog'></Link>
+                        <Link to={newTo} alt='pressrelease'></Link>
                         <div className="image-holder">
                             <img src={img_link} alt="#"/>
                         </div>
@@ -60,12 +58,11 @@ class Pressroom extends Component{
                 )
 
             } else {
-                console.log("B")
                 return (
                     <div className="press-item">
-                        <Link to={na}></Link>
+                        <Link to={newTo}></Link>
                         <div className="image-holder">
-                            <img src="https://source.unsplash.com/user/dulceylima/930x930" alt="#"/>
+                            <img src="https://source.unsplash.com/user/dulceylima/930x930" alt='pressrelease'/>
                         </div>
                         <div className="text-holder">
                             <p className="date">{pressRelease.date}</p>
@@ -77,7 +74,6 @@ class Pressroom extends Component{
                 )
             }
         })
-        console.log(componentsList)
         return(
             <React.Fragment>
                 <div className="pressroom-wrapper">

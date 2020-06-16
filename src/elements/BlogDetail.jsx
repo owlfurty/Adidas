@@ -12,8 +12,6 @@ class BlogDetail extends Component {
 
     constructor(props) {
         super(props)
-        console.log(props.match.params.uid)
-        console.log(props.match.params)
         this.uid = props.match.params.uid
         this.blogpost = props.location.blogpost
 
@@ -34,7 +32,6 @@ class BlogDetail extends Component {
             return response.json()
         })
         .then((json) => {
-            console.log("json: ", json)
             this.setState({loading:false, blog:json.entry})
         })
     }
