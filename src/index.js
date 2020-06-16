@@ -8,6 +8,8 @@ import './index.scss';
 // Home layout
 import MachAliance from './home/MainDemo';
 import BlogDetail from './elements/BlogDetail'
+import Pressroom from './elements/Pressroom'
+import PressDetail from './elements/PressDetail'
 
 // Element Layout
 import Service from "./elements/Service";
@@ -57,6 +59,8 @@ class Root extends Component{
                     <Route exact path={`${process.env.PUBLIC_URL}/portfolio-details`} component={PortfolioDetails}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/blog`} component={Blog}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/blog-details`} component={BlogDetails}/>
+                    <Route exact path={`${process.env.PUBLIC_URL}/newsroom`} component={Pressroom}/>
+                    <Route exact path={`${process.env.PUBLIC_URL}/newsdetail/:uid`} component={PressDetail}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/manifesto`} component={Manifesto}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/blogdetail/:uid`} component={BlogDetail}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/insights`} component={Insights}/>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 
 class Pressroom extends Component{
 
@@ -35,42 +36,48 @@ class Pressroom extends Component{
         let category = 'Pressroom'
         let sortedEntries = entries.sort((a, b) => b.date - a.date)
         let componentsList = sortedEntries.map((pressRelease) => {
-
-           
-            let link = window.location + pressRelease.url.replace("/","")
+            console.log('pr: ', pressRelease)
+            const na = { 
+                pathname: `/newsdetail/${pressRelease.uid}`, 
+                pressRelease: pressRelease 
+            }
+            // let link = window.location + `newsdetail/${pressRelease.uid}`
 
             if ( pressRelease.hero_image !== null){
-
+                console.log("A")
                 let img_link = pressRelease.hero_image.url
                 return (
                     <div className="press-item">
+                        <Link to={na} alt='blog'></Link>
                         <div className="image-holder">
                             <img src={img_link} alt="#"/>
                         </div>
                         <div className="text-holder">
                             <p className="date">{pressRelease.date}</p>
-                            <h2 className="press-title"><a href={link} >{pressRelease.title}</a></h2>
+                            <h2 className="press-title">{pressRelease.title}</h2>
                         </div>
                     </div>
                 )
 
             } else {
-
+                console.log("B")
                 return (
                     <div className="press-item">
+                        <Link to={na}></Link>
                         <div className="image-holder">
                             <img src="https://source.unsplash.com/user/dulceylima/930x930" alt="#"/>
                         </div>
                         <div className="text-holder">
                             <p className="date">{pressRelease.date}</p>
-                            <h2 className="press-title"><a href={link} >{pressRelease.title}</a></h2>
+                            <a href={link}></a>
+                            <h2 className="press-title">{pressRelease.title}</h2>
                         </div>
                         
                     </div>
                 )
             }
         })
-       
+        console.log(componentsList)
         return(
             <React.Fragment>
                 <div className="pressroom-wrapper">
@@ -92,7 +99,7 @@ class Pressroom extends Component{
                                 </div>
                             </div>
                         </div>
-                        <a class="button" href="/pressroom">Show all</a>
+                        <a class="button" href="/newsroom">Show all</a>
                     </div>   
                 </div>
                 
