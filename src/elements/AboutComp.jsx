@@ -33,8 +33,7 @@ class AboutComp extends Component{
 
     render(){
         const { isLoading, about} = this.state;
-        let category = 'About'
-
+        
         if(isLoading){
             return null
         }
