@@ -7,8 +7,10 @@ import SliderOne from "../component/slider/SliderOne";
 import About from "../component/HomeLayout/homeOne/About";
 import ManifestoComp from "../elements/ManifestoComp";
 import AcronymComp from "../elements/AcronymComp";
-import Architecture from "../elements/Architecture";
-import Theboard from "../elements/Theboard";
+import ArchitectureComp from "../elements/ArchitectureComp";
+import TheboardComp from "../elements/TheboardComp";
+import CrewComp from "../elements/CrewComp";
+
 import Members from "../elements/Members";
 import Insights from "../elements/Insights";
 import Pressroom from "../elements/Pressroom";
@@ -54,17 +56,23 @@ class MainDemo extends Component{
                 </div>
                 {/* End Acronym Area */}
 
-                {/* Start Architecture Area */}
+                {/* Start ArchitectureComp Area */}
                 <div className="architecture-area architecture-position-top linend">
-                    <Architecture />
+                    <ArchitectureComp />
                 </div>
-                {/* End Architecture Area */}
+                {/* End ArchitectureComp Area */}
+                
+                {/* Start TheboardComp Area */}
+                <div className="theboard-area theboardComp-position-top container-desktop">
+                    <TheboardComp />
+                </div>
+                {/* End TheboardComp Area */}
 
-                {/* Start Theboard Area */}
-                <div className="theboard-area theboard-position-top container-desktop">
-                    <Theboard />
+                {/* Start CrewComp Area */}
+                <div className="CrewComp-area CrewComp-position-top container-desktop">
+                    <CrewComp />
                 </div>
-                {/* End Theboard Area */}
+                {/* End CrewComp Area */}
 
                 {/* Start Members Area */}
                 <div className="members-area members-position-top linend">

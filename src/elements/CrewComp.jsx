@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Theboard extends Component{
+class CrewComp extends Component{
 
     constructor(){
         super()
@@ -63,51 +63,26 @@ class Theboard extends Component{
         }
 
         let boardList = this.getElements(boardMembers)
-
         let advisoryList = this.getElements(advisoryMembers)
 
         let
-        category = 'Theboard',
-        title = 'Together freeing up technology.',
-        paragraphOne = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit velit elit. Aliquam blandit rhoncus fermentum. Donec mollis vehicula arcu quis interdum. Nullam euismod volutpat porttitor.',
-        firstname = 'Kelly',
-        lastname = 'Goetsch',
-        jobtitle = 'President',
         crewOne = 'Board',
-        crewTwo = 'Advisory board';
+        crewTwo = 'Advisory board'
         return(
             <React.Fragment>
-                <div className="theboard-wrapper">
-                    <div className="container">
-                        <div className="row row--35 align-items-center">
+                <div className="team-content">
+                    <h3 className="category">{crewOne}</h3>    
+                    <div className="row team-pictures">
+                        {boardList}
+                    </div>
 
-                            <div className="col-lg-8 col-md-12">
-                                <div className="theboard-inner inner">
-                                    <div className="section-title">
-                                        <h3 className="category">{category}</h3>
-                                        <h2 className="title">{title}</h2>
-                                    </div>
-                                    <div className="paragraph">
-                                        <p className="body-text">{paragraphOne}</p>
-                                    </div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>       
-                    <div className="team-content">
-                        <h3 className="category">{crewOne}</h3>    
-                        <div className="row team-pictures">
-                            {boardList}
-                        </div>
-
-                        <h3 className="category crewtwo">{crewTwo}</h3>    
-                        <div className="row team-pictures">
-                            {advisoryList}
-                        </div>
-                    </div>         
-                </div>
+                    <h3 className="category crewtwo">{crewTwo}</h3>    
+                    <div className="row team-pictures">
+                        {advisoryList}
+                    </div>
+                </div>         
             </React.Fragment>
         )
     }
 }
-export default Theboard;
+export default CrewComp;
