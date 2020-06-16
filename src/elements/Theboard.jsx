@@ -26,54 +26,45 @@ class Theboard extends Component{
             return response.json()
         })
         .then((json) => {     
-            console.log(json)       
-            this.setState({team:json.entries, isLoading:false })
+            console.log(json)
+            let boardMembers = json.entries.filter((member)=>{
+                return member.tags.includes("board")
+            })
+    
+            let advisoryMembers = json.entries.filter((member)=>{
+                return member.tags.includes("advisory")
+            })    
+            this.setState({boardMembers:boardMembers, advisoryMembers:advisoryMembers, isLoading:false })
         })
     }
 
+    
+    getElements(list){
+        return list.map((member) => {
+            let firstname = member.title.split(" ")[0]
+            let lastname = member.title.replace(firstname + " ", "")
+            return (
+                <div className="col-6 col-lg-2">
+                    <img alt="theboard" src={member.headshot.url}/>
+                    <p className="firstname">{firstname}</p>
+                    <p className="lastname">{lastname}</p>
+                    <p className="jobtitle">{member.role}</p>
+                </div>
+            )
+        })
+    }
 
     render(){
 
-        const { isLoading, team } = this.state;
+        const {boardMembers, advisoryMembers, isLoading } = this.state;
         
         if ( isLoading ) {
             return null;
         }
 
-        let boardMembers = team.filter((member)=>{
-            return member.tags.includes("board")
-        })
+        let boardList = this.getElements(boardMembers)
 
-        let advisoryMembers = team.filter((member)=>{
-            return member.tags.includes("advisory")
-        })
-
-        let boardList = boardMembers.map((member) => {
-            let firstname = member.title.split(" ")[0]
-            let lastname = member.title.replace(firstname + " ", "")
-            return (
-                <div className="col-6 col-lg-2">
-                    <img alt="theboard" src={member.headshot.url}/>
-                    <p className="firstname">{firstname}</p>
-                    <p className="lastname">{lastname}</p>
-                    <p className="jobtitle">{member.role}</p>
-                </div>
-            )
-        })
-        
-        let advisoryList = advisoryMembers.map((member) => {
-            console.log(member)
-            let firstname = member.title.split(" ")[0]
-            let lastname = member.title.replace(firstname + " ", "")
-            return (
-                <div className="col-6 col-lg-2">
-                    <img alt="theboard" src={member.headshot.url}/>
-                    <p className="firstname">{firstname}</p>
-                    <p className="lastname">{lastname}</p>
-                    <p className="jobtitle">{member.role}</p>
-                </div>
-            )
-        })
+        let advisoryList = this.getElements(advisoryMembers)
 
         let
         category = 'Theboard',
