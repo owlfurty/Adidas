@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 
-class Insights extends Component{
+class InsightsComp extends Component{
 
     state = {entries: [], isLoading:true, teamAndAllies:[]}
 
@@ -132,4 +132,4 @@ class Insights extends Component{
         )
     }
 }
-export default Insights;
+export default InsightsComp;

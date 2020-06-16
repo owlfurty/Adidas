@@ -4,7 +4,9 @@ import ScrollToTop from 'react-scroll-up';
 import { FiChevronUp } from "react-icons/fi";
 import Header from "../component/header/Header";
 import Footer from "../component/footer/Footer";
-
+import { IoMdCalendar } from "react-icons/io";
+import { IoMdCreate } from "react-icons/io";
+import InsightsComp from "../elements/InsightsComp";
 
 class BlogDetail extends Component {
 
@@ -44,7 +46,7 @@ class BlogDetail extends Component {
     }
 
     render(){
-        const { loading, blog} = this.state;
+        const { loading, blog } = this.state;
 
         if ( loading ) {
             return null;
@@ -57,12 +59,12 @@ class BlogDetail extends Component {
                 <PageHelmet pageTitle='Blog Details' />
                 <Header headertransparent="header--black" colorblack="color--white" logoname="logo.png" />
                 {/* Start Breadcrump Area */}
-                <div className="sub-hero rn-page-title-area pt--120 bg_image" style={{ backgroundImage: "url('{blog.title}')" }} data-black-overlay="7">
+                <div className="sub-hero rn-page-title-area pt--120 bg_image" style={{ backgroundImage: `url(${blog.hero_image.url})` }} data-black-overlay="3">
                     <div className="container-desktop position-relative">
                         <div className="row">
-                            <div className="col-lg-12 pt--80">
+                            <div className="col-lg-8 pt--80">
                                 <div className="inner">
-                                    <h1 className="title">Enterprise <br/> MACHified.</h1>
+                                    <h1 className="title">{blog.title}</h1>
                                 </div>
                             </div>
                         </div>
@@ -74,23 +76,42 @@ class BlogDetail extends Component {
                         </div> */}
                                 {/* End Home CTA */}
                     </div>
+                    <div className="white-space">
+                        <ul className="page-list">
+                            <li className="breadcrumb-item">
+                                <i to={`${process.env.PUBLIC_URL}`}><IoMdCalendar /> </i> {blog.date}
+                            </li>
+                        </ul>
+                        <ul className="page-list">
+                            <li className="breadcrumb-item">
+                                <i to={`${process.env.PUBLIC_URL}`}><IoMdCreate /> </i> {blog.authorname}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 {/* End Breadcrump Area */}
 
                 {/* Start Blog Details */}
-                <div className="rn-blog-details pt--110 pb--70 bg_color--1">
+                <div className="rn-blog-details pb--70 bg_color--1 blog-detail">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <h2 className="blog-title">{blog.title}</h2>
-                                <p className="blog-text">Tags: {tagsList}</p>
-                                <p className="blog-text">{blog.summary}</p>
+                                <div class="section-title">
+                                    <h3 class="category">{blog.category_name}</h3>
+                                    <h2>{blog.subject_title}</h2>
+                                </div>
                                 <div dangerouslySetInnerHTML={{ __html: blog.body} } />
                             </div>
                         </div>
                     </div>
                 </div>
                 {/* End Blog Details */}
+
+                {/* Start InsightsComp Area */}
+                <div className="insights-area insights-position-top linend">
+                    <InsightsComp />
+                </div>
+                {/* End Insights Area */}
                             
 
                 {/* Start Back To Top */}

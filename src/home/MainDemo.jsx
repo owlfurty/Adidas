@@ -4,7 +4,7 @@ import Header from "../component/header/Header";
 import SliderOne from "../component/slider/SliderOne";
 // import SliderVideo from "../component/slider/SliderVideo";
 
-import About from "../component/HomeLayout/homeOne/About";
+import AboutComp from "../elements/AboutComp";
 import ManifestoComp from "../elements/ManifestoComp";
 import AcronymComp from "../elements/AcronymComp";
 import ArchitectureComp from "../elements/ArchitectureComp";
@@ -12,7 +12,7 @@ import TheboardComp from "../elements/TheboardComp";
 import CrewComp from "../elements/CrewComp";
 
 import Members from "../elements/Members";
-import Insights from "../elements/Insights";
+import InsightsComp from "../elements/InsightsComp";
 import Pressroom from "../elements/Pressroom";
 import Mediacontacts from "../elements/Mediacontacts";
 import Mediamentions from "../elements/Mediamentions";
@@ -40,7 +40,7 @@ class MainDemo extends Component{
                 
                 {/* Start About Area */}
                 <div className="about-area about-position-top linend">
-                    <About />
+                    <AboutComp />
                 </div>
                 {/* End About Area */}
 
@@ -80,9 +80,9 @@ class MainDemo extends Component{
                 </div>
                 {/* End Members Area */}
 
-                {/* Start Insights Area */}
+                {/* Start InsightsComp Area */}
                 <div className="insights-area insights-position-top linend">
-                    <Insights />
+                    <InsightsComp />
                 </div>
                 {/* End Insights Area */}
 
