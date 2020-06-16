@@ -69,7 +69,7 @@ class Pressroom extends Component{
                         </div>
                         <div className="text-holder">
                             <p className="date">{pressRelease.date}</p>
-                            <a href={link}></a>
+                            {/* <a href={link}></a> */}
                             <h2 className="press-title">{pressRelease.title}</h2>
                         </div>
                         
