@@ -38,7 +38,7 @@ class PressDetail extends Component {
         this.getNews(this.uid)
     }
 
-    componentWillReceiveProps(){
+    componentDidUpdate(){
         if(this.props.location.pathname !== this.props.history.location.pathname ){
             this.getNews(this.props.history.location.pressRelease.uid)
             window.scrollTo({top: 0, left: 0, behavior: 'smooth' })
@@ -81,7 +81,7 @@ class PressDetail extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <div class="section-title">
+                                <div className="section-title">
                                     <h2>{entry.summary}</h2>
                                 </div>
                                 <div dangerouslySetInnerHTML={{ __html: entry.body} } />

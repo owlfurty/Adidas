@@ -40,7 +40,7 @@ class BlogDetail extends Component {
         this.getBlog(this.uid)
     }
 
-    componentWillReceiveProps(){
+    componentDidUpdate(){
         if(this.props.location.pathname !== this.props.history.location.pathname ){
             this.getBlog(this.props.history.location.blogpost.uid)
             window.scrollTo({top: 0, left: 0, behavior: 'smooth' })
@@ -96,8 +96,8 @@ class BlogDetail extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <div class="section-title">
-                                    <h3 class="category">{blog.category_name}</h3>
+                                <div className="section-title">
+                                    <h3 className="category">{blog.category_name}</h3>
                                     <h2>{blog.subject_title}</h2>
                                 </div>
                                 <div dangerouslySetInnerHTML={{ __html: blog.body} } />

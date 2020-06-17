@@ -26,7 +26,6 @@ class CrewComp extends Component{
             return response.json()
         })
         .then((json) => {     
-            console.log(json)
             let boardMembers = json.entries.filter((member)=>{
                 return member.tags.includes("board")
             })
@@ -44,7 +43,7 @@ class CrewComp extends Component{
             let firstname = member.title.split(" ")[0]
             let lastname = member.title.replace(firstname + " ", "")
             return (
-                <div className="col-6 col-lg-2">
+                <div className="col-6 col-lg-2" key={member.uid}>
                     <img alt="theboard" src={member.headshot.url}/>
                     <p className="firstname">{firstname}</p>
                     <p className="lastname">{lastname}</p>

@@ -30,7 +30,7 @@ class Mediamentions extends Component{
                                         <li><a href="/">Article title comes here over multiple lines if needed.</a></li>
                                         <li><a href="/">Article title comes here over multiple lines if needed.</a></li>
                                     </ul>
-                                    <a class="button" href="/media-mentions">Show more</a>
+                                    <a className="button" href="/media-mentions">Show more</a>
                                 </div>
                             </div>
                         </div>

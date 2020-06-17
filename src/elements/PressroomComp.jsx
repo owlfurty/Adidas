@@ -45,7 +45,7 @@ class PressroomComp extends Component{
             if ( pressRelease.hero_image !== null){
                 let img_link = pressRelease.hero_image.url
                 return (
-                    <div className="press-item">
+                    <div className="press-item" key={pressRelease.uid}>
                         <Link to={newTo} alt='pressrelease'></Link>
                         <div className="image-holder">
                             <img src={img_link} alt="#"/>
@@ -59,7 +59,7 @@ class PressroomComp extends Component{
 
             } else {
                 return (
-                    <div className="press-item">
+                    <div className="press-item" key={pressRelease.uid}>
                         <Link to={newTo}></Link>
                         <div className="image-holder">
                             <img src="https://source.unsplash.com/user/dulceylima/930x930" alt='pressrelease'/>

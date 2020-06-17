@@ -70,7 +70,7 @@ class InsightsComp extends Component{
                 let img_link = blogPost.hero_image.url
                 return (
                     
-                        <div className="blog-item">
+                        <div className="blog-item" key={blogPost.uid}>
                             <Link to={newTo} alt='blog'></Link>
                             <div className="image-holder">
                                 <img src={img_link} alt=""/>
@@ -88,7 +88,7 @@ class InsightsComp extends Component{
             } else {
 
                 return (
-                        <div className="blog-item">
+                        <div className="blog-item" key={blogPost.uid}> 
                             <Link to={newTo}></Link>
                             <div className="image-holder">
                                 <img src="https://source.unsplash.com/user/dulceylima/930x930" alt=""/>
