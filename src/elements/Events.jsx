@@ -1,7 +1,59 @@
 import React, { Component } from "react";
 
 class Events extends Component{
+
+    constructor(){
+        super()
+        this.state = { isLoading: true, events:null}
+    }
+
+    componentDidMount(){
+        this.getEvents()
+    }
+
+    getEvents = () => {
+        fetch('https://cdn.contentstack.io/v3/content_types/events/entries?environment=development&locale=en-us', {
+            method:'get',
+            mode:'cors',
+            headers:{
+                api_key:'bltb9eff0ec0532965e',
+                access_token:'csbcb89082a35b960cf9d10e11',
+                Accept: "*/*"
+            }
+        })
+        .then((response)=> {
+            return response.json()
+        })
+        .then((json) => {
+            this.setState({events:json.entries, isLoading:false})
+        })
+    }
+
+    getElements(list){
+
+        let elements = list.map((event) => {
+            let eventDate = new Date(Date.parse(event.event_date))
+            let formattedDate = eventDate.getDate()+"-"+eventDate.getMonth()+"-"+eventDate.getFullYear()
+            
+            return (
+                <li key={event.uid}><a href={event.event_url}>
+                    <span class="event-date">{formattedDate + " - " + event.event_city}</span>
+                    <span class="event-title">{event.title}</span>
+                    </a>
+                </li>
+            )
+        })
+        return elements
+    }
+
     render(){
+        const { isLoading, events} = this.state
+
+        if( isLoading ){
+            return null
+        }
+        let componentsList = this.getElements(events)
+
         let
         category = 'Events'
         return(
@@ -27,26 +79,7 @@ class Events extends Component{
                             <div className="row events-links">
                                 <div className="col-12">
                                     <ul>
-                                        <li><a href="/">
-                                            <span class="event-date">may 18, 2020 - venue</span>
-                                            <span class="event-title">Article title comes here over multiple lines if needed.</span>
-                                            </a>
-                                        </li>
-                                        <li><a href="/">
-                                            <span class="event-date">may 18, 2020 - venue</span>
-                                            <span class="event-title">Article title comes here over multiple lines if needed.</span>
-                                            </a>
-                                        </li>
-                                        <li><a href="/">
-                                            <span class="event-date">may 18, 2020 - venue</span>
-                                            <span class="event-title">Article title comes here over multiple lines if needed.</span>
-                                            </a>
-                                        </li>
-                                        <li><a href="/">
-                                            <span class="event-date">may 18, 2020 - venue</span>
-                                            <span class="event-title">Article title comes here over multiple lines if needed.</span>
-                                            </a>
-                                        </li>
+                                        {componentsList}
                                     </ul>
                                     <a class="button whitebg" href="/events">More events</a>
                                 </div>
