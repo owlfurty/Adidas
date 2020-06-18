@@ -37,8 +37,8 @@ class Mediacontacts extends Component{
                         <img alt="mediacontacts" src={mediacontact.member_logo.url}/> 
                         <p className="contact">{mediacontact.title}</p>               
                         <ul>
-                            <li><a href="/"><img src="/assets/images/brand/icon-mail.svg" alt=""/></a></li>
-                            <li><a href="/"><img src="/assets/images/brand/icon-phone.svg" alt=""/></a></li>
+                            <li><a href={"mailto:" + mediacontact.email}><img src="/assets/images/brand/icon-mail.svg" alt=""/></a></li>
+                            <li><a href={"tel:" + mediacontact.phone}><img src="/assets/images/brand/icon-phone.svg" alt=""/></a></li>
                         </ul>
                     </figure>
                 </div>
