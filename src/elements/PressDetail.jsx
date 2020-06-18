@@ -38,7 +38,7 @@ class PressDetail extends Component {
         this.getNews(this.uid)
     }
 
-    componentDidUpdate(){
+    componentWillReceiveProps(){
         if(this.props.location.pathname !== this.props.history.location.pathname ){
             this.getNews(this.props.history.location.pressRelease.uid)
             window.scrollTo({top: 0, left: 0, behavior: 'smooth' })

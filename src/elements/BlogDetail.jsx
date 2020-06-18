@@ -40,7 +40,7 @@ class BlogDetail extends Component {
         this.getBlog(this.uid)
     }
 
-    componentDidUpdate(){
+    componentWillReceiveProps(){
         if(this.props.location.pathname !== this.props.history.location.pathname ){
             this.getBlog(this.props.history.location.blogpost.uid)
             window.scrollTo({top: 0, left: 0, behavior: 'smooth' })
