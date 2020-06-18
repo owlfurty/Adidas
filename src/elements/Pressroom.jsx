@@ -1,56 +1,56 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 
-class Pressroom extends Component{
+class Pressroom extends Component {
 
 
-    
-    state = {entries: [], isLoading:true}
+
+    state = { entries: [], isLoading: true }
 
     getEntries = () => {
         fetch('https://cdn.contentstack.io/v3/content_types/pressrelease/entries?environment=development&locale=en-us', {
-            method:'get',
-            mode:'cors',
-            headers:{
-                api_key:'bltb9eff0ec0532965e',
-                access_token:'csbcb89082a35b960cf9d10e11',
+            method: 'get',
+            mode: 'cors',
+            headers: {
+                api_key: 'bltb9eff0ec0532965e',
+                access_token: 'csbcb89082a35b960cf9d10e11',
                 Accept: "*/*"
             }
         })
-        .then((response)=> {
-            return response.json()
-        })
-        .then((json) => {
-            this.setState({entries:json.entries, isLoading:false})
-        })
+            .then((response) => {
+                return response.json()
+            })
+            .then((json) => {
+                this.setState({ entries: json.entries, isLoading: false })
+            })
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.getEntries()
     }
 
-    render(){
+    render() {
         const { entries, isLoading } = this.state;
-        
-        if ( isLoading ) {
+
+        if (isLoading) {
             return null;
         }
         let category = 'The Newsroom'
         let sortedEntries = entries.sort((a, b) => b.date - a.date)
         let componentsList = sortedEntries.map((pressRelease) => {
-            const newTo = { 
-                pathname: `/newsdetail/${pressRelease.uid}`, 
-                pressRelease: pressRelease 
+            const newTo = {
+                pathname: `/newsdetail/${pressRelease.uid}`,
+                pressRelease: pressRelease
             }
             // let link = window.location + `newsdetail/${pressRelease.uid}`
 
-            if ( pressRelease.hero_image !== null){
+            if (pressRelease.hero_image !== null) {
                 let img_link = pressRelease.hero_image.url
                 return (
                     <div className="press-item" key={pressRelease.uid}>
                         <Link to={newTo} alt='pressrelease'></Link>
                         <div className="image-holder">
-                            <img src={img_link} alt="#"/>
+                            <img src={img_link} alt="#" />
                         </div>
                         <div className="text-holder">
                             <p className="date">{pressRelease.date}</p>
@@ -64,19 +64,19 @@ class Pressroom extends Component{
                     <div className="press-item" key={pressRelease.uid}>
                         <Link to={newTo}></Link>
                         <div className="image-holder">
-                            <img src="https://source.unsplash.com/user/dulceylima/930x930" alt='pressrelease'/>
+                            <img src="https://source.unsplash.com/user/dulceylima/930x930" alt='pressrelease' />
                         </div>
                         <div className="text-holder">
                             <p className="date">{pressRelease.date}</p>
                             {/* <a href={link}></a> */}
                             <h2 className="press-title">{pressRelease.title}</h2>
                         </div>
-                        
+
                     </div>
                 )
             }
         })
-        return(
+        return (
             <React.Fragment>
                 <div className="pressroom-wrapper">
                     <div className="container">
@@ -97,9 +97,9 @@ class Pressroom extends Component{
                                 </div>
                             </div>
                         </div>
-                    </div>   
+                    </div>
                 </div>
-                
+
             </React.Fragment>
         )
     }

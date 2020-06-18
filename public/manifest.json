@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "MACH Alliance",
+  "name": "MACH Alliance",
+  "author": "SmartSolutionLab",
   "icons": [
     {
       "src": "favicon.ico",

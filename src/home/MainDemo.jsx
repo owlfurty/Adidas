@@ -1,16 +1,10 @@
-import React, { Component , Fragment } from "react";
+import React, { Component, Fragment } from "react";
 import Header from "../component/header/Header";
-
 import SliderOne from "../component/slider/SliderOne";
-// import SliderVideo from "../component/slider/SliderVideo";
-
 import AboutComp from "../elements/AboutComp";
 import ManifestoComp from "../elements/ManifestoComp";
 import AcronymComp from "../elements/AcronymComp";
 import ArchitectureComp from "../elements/ArchitectureComp";
-import TheboardComp from "../elements/TheboardComp";
-import CrewComp from "../elements/CrewComp";
-
 import Members from "../elements/Members";
 import InsightsComp from "../elements/InsightsComp";
 import PressroomComp from "../elements/PressroomComp";
@@ -24,10 +18,10 @@ import Helmet from "../component/common/Helmet";
 
 import Footer from "../component/footer/Footer";
 
-class MainDemo extends Component{
-    render(){
-        return(
-            <Fragment> 
+class MainDemo extends Component {
+    render() {
+        return (
+            <Fragment>
                 <Helmet pageTitle="MACH Alliance" />
 
                 <Header headertransparent="header--transparent" colorblack="color--black" logoname="logo.png" />
@@ -37,7 +31,7 @@ class MainDemo extends Component{
                     <SliderOne />
                 </div>
                 {/* End Slider Area   */}
-                
+
                 {/* Start About Area */}
                 <div className="about-area about-position-top linend">
                     <AboutComp />
@@ -61,18 +55,7 @@ class MainDemo extends Component{
                     <ArchitectureComp />
                 </div>
                 {/* End ArchitectureComp Area */}
-                
-                {/* Start TheboardComp Area */}
-                <div className="theboard-area theboardComp-position-top container-desktop">
-                    <TheboardComp />
-                </div>
-                {/* End TheboardComp Area */}
 
-                {/* Start CrewComp Area */}
-                <div className="CrewComp-area CrewComp-position-top container-desktop">
-                    <CrewComp />
-                </div>
-                {/* End CrewComp Area */}
 
                 {/* Start Members Area */}
                 <div className="members-area members-position-top linend">
@@ -109,7 +92,7 @@ class MainDemo extends Component{
                     <Events />
                 </div>
                 {/* End Mediamentions Area */}
-                
+
                 {/* Start MyForm Area */}
                 <div className="myForm-area myForm-position-top linend">
                     <MyForm />
@@ -123,9 +106,9 @@ class MainDemo extends Component{
                 {/* End Getintouch Area */}
 
                 <Footer />
-                
+
             </Fragment>
-            
+
         )
     }
 }

@@ -76,6 +76,11 @@ $small-mobile: 'only screen and (max-width: 479px)';
     max-width: 1220px!important;
     margin: 0 auto;
     width: 100%;
+    .title {
+        @media #{$small-mobile} {
+            padding: 0 30px;
+        } 
+    }
     @media #{$small-mobile} {
         width: 100%;
     }    

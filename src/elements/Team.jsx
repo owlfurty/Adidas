@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FaFacebookF , FaLinkedinIn , FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 let TeamContent = [
     {
@@ -111,16 +111,16 @@ let TeamContent = [
 ];
 
 
-class Team extends Component{
-    render(){
-        const {column} = this.props;
-        return(
+class Team extends Component {
+    render() {
+        const { column } = this.props;
+        return (
             <React.Fragment>
-                {TeamContent.map((value , i ) => (
+                {TeamContent.map((value, i) => (
                     <div className={`${column}`} key={i}>
                         <div className="team">
                             <div className="thumbnail">
-                                <img src={`/assets/images/team/team-${value.images}.jpg`} alt="Blog Images"/>
+                                <img src={`/assets/images/team/team-${value.images}.jpg`} alt="Blog Images" />
                             </div>
                             <div className="content">
                                 <h4 className="title">{value.title}</h4>

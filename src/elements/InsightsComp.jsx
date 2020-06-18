@@ -70,7 +70,7 @@ class InsightsComp extends Component{
                 let img_link = blogPost.hero_image.url
                 return (
                     
-                        <div className="blog-item" key={blogPost.uid}>
+                        <div className={`blog-item ${blogPost.watermark}`} key={blogPost.uid}>
                             <Link to={newTo} alt='blog'></Link>
                             <div className="image-holder">
                                 <img src={img_link} alt=""/>

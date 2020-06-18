@@ -36,9 +36,10 @@ class Events extends Component{
             let formattedDate = eventDate.getDate()+"-"+eventDate.getMonth()+"-"+eventDate.getFullYear()
             
             return (
-                <li key={event.uid}><a href={event.event_url}>
-                    <span class="event-date">{formattedDate + " - " + event.event_city}</span>
-                    <span class="event-title">{event.title}</span>
+                <li key={event.uid}>
+                    <a href={event.event_url}>
+                        <span class="event-date">{formattedDate + " - " + event.event_city}</span>
+                        <span class="event-title">{event.title}</span>
                     </a>
                 </li>
             )
@@ -81,7 +82,7 @@ class Events extends Component{
                                     <ul>
                                         {componentsList}
                                     </ul>
-                                    <a class="button whitebg" href="/events">More events</a>
+                                    {/* <a class="button whitebg" href="/events">More events</a> */}
                                 </div>
                             </div>
                         </div>

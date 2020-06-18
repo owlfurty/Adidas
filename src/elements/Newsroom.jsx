@@ -9,48 +9,48 @@ import Getintouch from "../elements/Getintouch"
 import MyForm from "../elements/MyForm"
 import Pressroom from "../elements/Pressroom"
 
-class Newsroom extends Component{
-    constructor(){
+class Newsroom extends Component {
+    constructor() {
         super()
 
-        this.state = { isLoading : true, pressrelease: null}
+        this.state = { isLoading: true, pressrelease: null }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.getInsights()
     }
 
     getInsights = () => {
         fetch('https://cdn.contentstack.io/v3/content_types/pressrelease/entries?environment=development&locale=en-us', {
-            method:'get',
-            mode:'cors',
-            headers:{
-                api_key:'bltb9eff0ec0532965e',
-                access_token:'csbcb89082a35b960cf9d10e11',
+            method: 'get',
+            mode: 'cors',
+            headers: {
+                api_key: 'bltb9eff0ec0532965e',
+                access_token: 'csbcb89082a35b960cf9d10e11',
                 Accept: "*/*"
             }
         })
-        .then((response)=> {
-            return response.json()
-        })
-        .then((json) => {
-            this.setState({pressrelease:json.entries[0], isLoading:false})
-        })
+            .then((response) => {
+                return response.json()
+            })
+            .then((json) => {
+                this.setState({ pressrelease: json.entries[0], isLoading: false })
+            })
     }
 
 
-    render(){
-        const { isLoading} = this.state
+    render() {
+        const { isLoading } = this.state
 
-        if( isLoading ){
+        if (isLoading) {
             return null
         }
 
-        return(
+        return (
             <React.Fragment>
                 <PageHelmet pageTitle='Newsroom' />
                 <Header headertransparent="header--transparent" colorblack="color--black" logoname="logo.png" />
-                
+
                 {/* Start Breadcrump Area */}
                 <div className="sub-hero rn-page-title-area pt--120 bg_image" style={{ backgroundImage: `url(https://source.unsplash.com/user/vanschneider/1400x920)` }} data-black-overlay="1">
                     <div className="container-desktop position-relative">
@@ -67,7 +67,7 @@ class Newsroom extends Component{
                                 <span>Sign up</span>
                             </a>
                         </div> */}
-                                {/* End Home CTA */}
+                        {/* End Home CTA */}
                     </div>
                     <div className="white-space"><Breadcrumb title={'Newsroom'} /></div>
                 </div>
@@ -76,32 +76,32 @@ class Newsroom extends Component{
                 {/* Start pressrelease */}
                 <div className="rn-blog-details pb--20 bg_color--1">
                     {/* Start pressreleaseComp Area */}
-                     {/* <pressreleaseComp /> */}
-                     <div className="pressrelease-wrapper">
-                    <div className="container">
-                        <div className="row row--35 align-items-center">
+                    {/* <pressreleaseComp /> */}
+                    <div className="pressrelease-wrapper">
+                        <div className="container">
+                            <div className="row row--35 align-items-center">
 
-                            <div className="col-lg-8 col-md-12">
-                                <div className="pressrelease-inner inner">
-                                    <div className="section-title">
-                                        <h2 className="section-title mt--0">Extra Extra read all about it.</h2>
-                                        <p className="boy-text">The massive, monolithic enterprise software platforms that dominate today keep delivering slightly ‘faster horses’ to their customers. And because ‘nobody ever got fired for buying from the top right of an evaluation’, enterprises timidly accept it.</p>
+                                <div className="col-lg-8 col-md-12">
+                                    <div className="pressrelease-inner inner">
+                                        <div className="section-title">
+                                            <h2 className="section-title mt--0">Extra Extra read all about it.</h2>
+                                            <p className="boy-text">The massive, monolithic enterprise software platforms that dominate today keep delivering slightly ‘faster horses’ to their customers. And because ‘nobody ever got fired for buying from the top right of an evaluation’, enterprises timidly accept it.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
+
                     </div>
-                    
-                    
-                   
-                </div>
                     {/* End pressreleaseComp Area */}
-                    
+
                 </div>
                 {/* End pressrelease */}
-                
+
                 {/* Start Getintouch Area */}
-                 <div className="container-desktop getintouch-area getintouch-position-top">
+                <div className="container-desktop getintouch-area getintouch-position-top">
                     <Pressroom />
                 </div>
                 {/* End Getintouch Area */}
@@ -125,8 +125,8 @@ class Newsroom extends Component{
                     </ScrollToTop>
                 </div>
                 {/* End Back To Top */}
-                
-                <Footer /> 
+
+                <Footer />
 
             </React.Fragment>
         )

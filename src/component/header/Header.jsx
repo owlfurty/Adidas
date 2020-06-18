@@ -70,7 +70,7 @@ class Header extends Component{
                             </ul>
                         </nav>
                         {/* Start Humberger Menu  */}
-                        <div className="humberger-menu d-block d-lg-none pr--20">
+                        <div className="humberger-menu d-block d-lg-none">
                             <span onClick={this.menuTrigger} className="menutrigger text-white"><FiMenu /></span>
                         </div>
                         {/* End Humberger Menu  */}
