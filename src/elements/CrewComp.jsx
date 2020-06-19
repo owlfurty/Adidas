@@ -47,7 +47,7 @@ class CrewComp extends Component{
                     <img alt="theboard" src={member.headshot.url}/>
                     <p className="firstname">{firstname}</p>
                     <p className="lastname">{lastname}</p>
-                    <p className="jobtitle">{member.position}</p>
+                    <p className="jobtitle">{member.role}</p>
                 </div>
             )
         })
