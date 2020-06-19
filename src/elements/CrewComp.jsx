@@ -27,11 +27,11 @@ class CrewComp extends Component{
         })
         .then((json) => {     
             let boardMembers = json.entries.filter((member)=>{
-                return member.tags.includes("board")
+                return member.position.includes("Board")
             })
     
             let advisoryMembers = json.entries.filter((member)=>{
-                return member.tags.includes("advisory")
+                return member.position.includes("Advisory")
             })    
             this.setState({boardMembers:boardMembers, advisoryMembers:advisoryMembers, isLoading:false })
         })
@@ -47,7 +47,7 @@ class CrewComp extends Component{
                     <img alt="theboard" src={member.headshot.url}/>
                     <p className="firstname">{firstname}</p>
                     <p className="lastname">{lastname}</p>
-                    <p className="jobtitle">{member.role}</p>
+                    <p className="jobtitle">{member.position}</p>
                 </div>
             )
         })
@@ -65,8 +65,8 @@ class CrewComp extends Component{
         let advisoryList = this.getElements(advisoryMembers)
 
         let
-        crewOne = 'Board',
-        crewTwo = 'Advisory board'
+            crewOne = 'Board',
+            crewTwo = 'Advisory board'
         return(
             <React.Fragment>
                 <div className="team-content">

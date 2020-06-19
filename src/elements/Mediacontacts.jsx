@@ -1,44 +1,48 @@
 import React, { Component } from "react";
 
-class Mediacontacts extends Component{
-    constructor(){
+class Mediacontacts extends Component {
+    constructor() {
         super()
-        this.state = { isLoading: true, mediacontacts:null}
+        this.state = { isLoading: true, mediacontacts: null }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.getMediaContacts()
     }
 
     getMediaContacts = () => {
         fetch('https://cdn.contentstack.io/v3/content_types/media_contacts/entries?environment=development&locale=en-us', {
-            method:'get',
-            mode:'cors',
-            headers:{
-                api_key:'bltb9eff0ec0532965e',
-                access_token:'csbcb89082a35b960cf9d10e11',
+            method: 'get',
+            mode: 'cors',
+            headers: {
+                api_key: 'bltb9eff0ec0532965e',
+                access_token: 'csbcb89082a35b960cf9d10e11',
                 Accept: "*/*"
             }
         })
-        .then((response)=> {
-            return response.json()
-        })
-        .then((json) => {
-            this.setState({mediacontacts:json.entries, isLoading:false})
-        })
+            .then((response) => {
+                return response.json()
+            })
+            .then((json) => {
+                this.setState({ mediacontacts: json.entries, isLoading: false })
+            })
     }
 
-    getElements(list){
+    getElements(list) {
 
         let elements = list.map((mediacontact) => {
             return (
                 <div className="col-6 col-lg-3" key={mediacontact.uid}>
                     <figure>
-                        <img alt="mediacontacts" src={mediacontact.member_logo.url}/> 
-                        <p className="contact">{mediacontact.title}</p>               
+                        <img alt="mediacontacts" src={mediacontact.member_logo.url} />
+                        <p className="contact">{mediacontact.title}</p>
                         <ul>
-                            <li><a href={"mailto:" + mediacontact.email}><img src="/assets/images/brand/icon-mail.svg" alt=""/></a></li>
-                            <li><a href={"tel:" + mediacontact.phone}><img src="/assets/images/brand/icon-phone.svg" alt=""/></a></li>
+                            <li>
+                                <a href={"mailto:" + mediacontact.email}>
+                                    <img src="/assets/images/brand/icon-mail.svg" alt="" />
+                                </a>
+                            </li>
+                            <li><a href={"tel:" + mediacontact.phone}><img src="/assets/images/brand/icon-phone.svg" alt="" /></a></li>
                         </ul>
                     </figure>
                 </div>
@@ -47,17 +51,17 @@ class Mediacontacts extends Component{
         return elements
     }
 
-    render(){
+    render() {
         let
-        category = 'Media contacts'
+            category = 'Media contacts'
 
-        const { isLoading, mediacontacts} = this.state
+        const { isLoading, mediacontacts } = this.state
 
-        if( isLoading ){
+        if (isLoading) {
             return null
         }
         let elementsList = this.getElements(mediacontacts)
-        return(
+        return (
             <React.Fragment>
                 <div className="mediacontacts-wrapper">
                     <div className="container">
@@ -68,7 +72,7 @@ class Mediacontacts extends Component{
                                     <div className="section-title">
                                         <h3 className="category">{category}</h3>
                                     </div>
-                                
+
                                 </div>
                             </div>
                         </div>
@@ -81,7 +85,7 @@ class Mediacontacts extends Component{
                         </div>
 
                     </div>
-                                       
+
                 </div>
             </React.Fragment>
         )

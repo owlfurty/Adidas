@@ -56,7 +56,6 @@ class Theboardcomp extends Component{
                                     </div>
                                     <div className="paragraph">
                                         <p className="body-text" dangerouslySetInnerHTML={{ __html: theboard.summary} } />
-                                        <a className="text-link" href="/">{theboard.read_more}</a>
                                     </div>
                                 </div>
                             </div>
