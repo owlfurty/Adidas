@@ -52,7 +52,7 @@ class InsightsComp extends Component{
         if ( isLoading ) {
             return null;
         }
-        let category = 'Insights', categoryName = 'Category Name'
+        let category = 'Insights'
         let sortedEntries = entries.sort((a, b) => b.date - a.date)
         let componentsList = sortedEntries.map((blogPost) => {
 
@@ -77,9 +77,16 @@ class InsightsComp extends Component{
                             </div>
                             <div className="content-holder">
                                 <p className="date">{blogPost.date}</p>
-                                <p className="author">{author?.title} <span>{author?.role}</span> </p>
-                                <h3 className="category-name">{categoryName}</h3>
-                                <h2 className="blog-title">{blogPost.title}</h2>
+                                {/* <p className="author">{author?.title} <span>{author?.role}</span> </p> */}
+                                <p className="author">{author?.title}</p>
+                                {/* <h3 className="category-name">{categoryName}</h3> */}
+                                
+                                <h2 className="blog-title">
+                                    <span className="blog-tags">
+                                        {blogPost.tags.map(atina => (<span>{atina}</span>))}
+                                    </span>
+                                    <span>{blogPost.title}</span>
+                                </h2>
                                 <p className="blog-text">{blogPost.summary}</p>
                             </div>
                         </div> 
@@ -95,9 +102,13 @@ class InsightsComp extends Component{
                             </div>
                             <div className="content-holder">
                                 <p className="date">{blogPost.date}</p>
-                                <p className="author">{author?.title} <span>{author?.role}</span> </p>
-                                <h3 className="category-name">{categoryName}</h3>
-                                <h2 className="blog-title">{blogPost.title}</h2>
+                                {/* <p className="author">{author?.title} <span>{author?.role}</span> </p> */}
+                                <p className="author">{author?.title}</p>
+                                {/* <h3 className="category-name">{categoryName}</h3> */}
+                                <h2 className="blog-title">
+                                    <code className="blog-tags">{blogPost.tags}</code>
+                                    <span>{blogPost.title}</span>
+                                </h2>
                                 <p className="blog-text">{blogPost.summary}</p>
                             </div>
                         </div>

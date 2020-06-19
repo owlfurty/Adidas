@@ -84,7 +84,7 @@ class PressroomComp extends Component{
                                 <div className="pressroom-inner inner">
                                     <div className="section-title">
                                         <h3 className="category">{category}</h3>
-                                        <h2>Where the truth is told.</h2>
+                                        <h2>Latest news</h2>
                                     </div>
                                 </div>
                             </div>

@@ -68,7 +68,7 @@ class Events extends Component{
                                 <div className="events-inner inner">
                                     <div className="section-title">
                                         <h3 className="category">{category}</h3>
-                                        <h2 className="title">Come and see us in</h2>
+                                        <h2 className="title">Come and see us</h2>
                                     </div>
                                 
                                 </div>

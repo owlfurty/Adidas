@@ -17,7 +17,7 @@ class Getintouch extends Component{
                                         </Link>
                                     </figure>
                                     <h2>Get in touch</h2>
-                                    <a class="mailto" href="mailto:email@address.com">email@address.com</a>
+                                    <a class="mailto" href="mailto:info@machalliance.org">info@machalliance.org</a>
                                 </div>
                             </div>
                         </div>
