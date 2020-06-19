@@ -30,8 +30,12 @@ class Members extends Component{
     }
 
     getElements(list){
-
-        let elements = list.map((member) => {
+        let sortedList = list.sort(function(a, b) {
+            var textA = a.member_name.toUpperCase();
+            var textB = b.member_name.toUpperCase();
+            return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+        });
+        let elements = sortedList.map((member) => {
             return (
                 <div className="col-6 col-lg-3" key={member.uid}>
                     <img alt="members" src={member.member_logo.url}/>
