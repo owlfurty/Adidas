@@ -75,7 +75,7 @@ class Insights extends Component{
                         <div className="row">
                             <div className="col-lg-12 pt--80">
                                 <div className="inner">
-                                    <h1 className="title">Insights</h1>
+                                    <h1 className="title">{insightheader.title}</h1>
                                 </div>
                             </div>
                         </div>
