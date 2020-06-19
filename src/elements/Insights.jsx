@@ -13,11 +13,30 @@ class Insights extends Component{
     constructor(){
         super()
 
-        this.state = { isLoading : true, manifesto: null}
+        this.state = { isLoading : true, manifesto: null, insightheader:null}
     }
 
     componentDidMount(){
         this.getInsights()
+        this.getInsightHeader()
+    }
+
+    getInsightHeader = () => {
+        fetch('https://cdn.contentstack.io/v3/content_types/insights/entries?environment=development&locale=en-us', {
+            method:'get',
+            mode:'cors',
+            headers:{
+                api_key:'bltb9eff0ec0532965e',
+                access_token:'csbcb89082a35b960cf9d10e11',
+                Accept: "*/*"
+            }
+        })
+        .then((response)=> {
+            return response.json()
+        })
+        .then((json) => {
+            this.setState({manifesto:this.state.manifesto, isLoading:false, insightheader: json.entries[0]})
+        })
     }
 
     getInsights = () => {
@@ -34,18 +53,17 @@ class Insights extends Component{
             return response.json()
         })
         .then((json) => {
-            this.setState({manifesto:json.entries[0], isLoading:false})
+            this.setState({manifesto:json.entries[0], isLoading:false, insightheader:this.state.insightheader})
         })
     }
 
 
     render(){
-        const { isLoading} = this.state
+        const { isLoading, insightheader, manifesto } = this.state
 
-        if( isLoading ){
+        if( isLoading || manifesto === null || insightheader=== null ){
             return null
         }
-
         return(
             <React.Fragment>
                 <PageHelmet pageTitle='Manifesto' />
@@ -84,8 +102,8 @@ class Insights extends Component{
                             <div className="col-lg-8 col-md-12">
                                 <div className="manifesto-inner inner">
                                     <div className="section-title">
-                                        <h2 className="section-title mt--0">Extra Extra read all about it.</h2>
-                                        <p className="boy-text">The massive, monolithic enterprise software platforms that dominate today keep delivering slightly ‘faster horses’ to their customers. And because ‘nobody ever got fired for buying from the top right of an evaluation’, enterprises timidly accept it.</p>
+                                        <h2 className="section-title mt--0">{insightheader.description_title}</h2>
+                                        <p className="boy-text" dangerouslySetInnerHTML={{ __html: insightheader.description }}/>
                                     </div>
                                 </div>
                             </div>

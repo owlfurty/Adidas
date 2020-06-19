@@ -13,13 +13,31 @@ class Newsroom extends Component {
     constructor() {
         super()
 
-        this.state = { isLoading: true, pressrelease: null }
+        this.state = { isLoading: true, pressrelease: null, newsroomheader:null }
     }
 
     componentDidMount() {
         this.getInsights()
+        this.getNewsroomHeader()
     }
 
+    getNewsroomHeader = () => {
+        fetch('https://cdn.contentstack.io/v3/content_types/newsroom/entries?environment=development&locale=en-us', {
+            method:'get',
+            mode:'cors',
+            headers:{
+                api_key:'bltb9eff0ec0532965e',
+                access_token:'csbcb89082a35b960cf9d10e11',
+                Accept: "*/*"
+            }
+        })
+        .then((response)=> {
+            return response.json()
+        })
+        .then((json) => {
+            this.setState({pressrelease:this.state.pressrelease, isLoading:false, newsroomheader: json.entries[0]})
+        })
+    }
     getInsights = () => {
         fetch('https://cdn.contentstack.io/v3/content_types/pressrelease/entries?environment=development&locale=en-us', {
             method: 'get',
@@ -34,15 +52,15 @@ class Newsroom extends Component {
                 return response.json()
             })
             .then((json) => {
-                this.setState({ pressrelease: json.entries[0], isLoading: false })
+                this.setState({ pressrelease: json.entries[0], isLoading: false, newsroomheader:this.state.newsroomheader })
             })
     }
 
 
     render() {
-        const { isLoading } = this.state
+        const { isLoading, pressrelease, newsroomheader } = this.state
 
-        if (isLoading) {
+        if (isLoading || pressrelease === null | newsroomheader === null) {
             return null
         }
 
@@ -84,8 +102,8 @@ class Newsroom extends Component {
                                 <div className="col-lg-8 col-md-12">
                                     <div className="pressrelease-inner inner">
                                         <div className="section-title">
-                                            <h2 className="section-title mt--0">Extra Extra read all about it.</h2>
-                                            <p className="boy-text">The massive, monolithic enterprise software platforms that dominate today keep delivering slightly ‘faster horses’ to their customers. And because ‘nobody ever got fired for buying from the top right of an evaluation’, enterprises timidly accept it.</p>
+                                            <h2 className="section-title mt--0">{newsroomheader.description_title}</h2>
+                                            <p className="boy-text" dangerouslySetInnerHTML={{ __html: newsroomheader.description }}/>
                                         </div>
                                     </div>
                                 </div>
