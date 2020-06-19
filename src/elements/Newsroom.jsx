@@ -8,6 +8,7 @@ import { FiChevronUp } from "react-icons/fi";
 import Getintouch from "../elements/Getintouch"
 import MyForm from "../elements/MyForm"
 import Pressroom from "../elements/Pressroom"
+import Mediacontacts from "../elements/Mediacontacts";
 
 class Newsroom extends Component {
     constructor() {
@@ -123,6 +124,12 @@ class Newsroom extends Component {
                     <Pressroom />
                 </div>
                 {/* End Getintouch Area */}
+
+                {/* Start Mediacontacts Area */}
+                <div className="mediacontacts-area mediacontacts-position-top linend">
+                    <Mediacontacts />
+                </div>
+                {/* End Mediacontacts Area */}
 
                 {/* Start MyForm Area */}
                 <div className="container-desktop myForm-area myForm-position-top linend">

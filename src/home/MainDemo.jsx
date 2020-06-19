@@ -8,7 +8,6 @@ import ArchitectureComp from "../elements/ArchitectureComp";
 import Members from "../elements/Members";
 import InsightsComp from "../elements/InsightsComp";
 import PressroomComp from "../elements/PressroomComp";
-import Mediacontacts from "../elements/Mediacontacts";
 import Mediamentions from "../elements/Mediamentions";
 import Events from "../elements/Events";
 import MyForm from "../elements/MyForm"
@@ -74,12 +73,6 @@ class MainDemo extends Component {
                     <PressroomComp />
                 </div>
                 {/* End PressroomComp Area */}
-
-                {/* Start Mediacontacts Area */}
-                <div className="mediacontacts-area mediacontacts-position-top linend">
-                    <Mediacontacts />
-                </div>
-                {/* End Mediacontacts Area */}
 
                 {/* Start Mediamentions Area */}
                 <div className="mediamentions-area mediamentions-position-top">

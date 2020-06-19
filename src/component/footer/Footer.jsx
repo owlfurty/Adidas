@@ -3,7 +3,7 @@ import {FaTwitter , FaLinkedinIn} from "react-icons/fa";
 
 const SocialShare = [
     {Social: <FaLinkedinIn /> , link: 'https://www.linkedin.com/company/machalliance/'},
-    {Social: <FaTwitter /> , link: 'https://twitter.com/machalliance/'},
+    {Social: <FaTwitter /> , link: 'https://twitter.com/MachAlliance'},
 ]
 class Footer extends Component{
     render(){

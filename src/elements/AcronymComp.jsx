@@ -60,7 +60,7 @@ class AcronymComp extends Component{
                     
                     <div className="info-content">
                         <p className="text-white" dangerouslySetInnerHTML={{ __html: acronym.services} } />
-                        <a className="text-link" href="/">{acronym.read_more}</a>
+                        <a className="text-link" href="/mach-technology">{acronym.read_more}</a>
                     </div>
  
                 </div>
