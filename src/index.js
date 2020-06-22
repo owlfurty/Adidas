@@ -40,14 +40,15 @@ import ContactForm from "./blocks/ContactForm";
 import GoogleMap from "./blocks/GoogleMap";
 import Columns from "./blocks/Columns";
 
+import { createBrowserHistory } from "history";
 import { BrowserRouter, Switch, Route  } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
-
+const hist = createBrowserHistory();
 class Root extends Component{
     render(){
         return(
-            <BrowserRouter basename={'/'}>
+            <BrowserRouter history={hist} basename={'/'}>
                 <Switch>
                     <Route exact path={`${process.env.PUBLIC_URL}/`} component={MachAliance}/>
 
