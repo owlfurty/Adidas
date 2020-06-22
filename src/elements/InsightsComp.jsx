@@ -48,12 +48,24 @@ class InsightsComp extends Component{
 
     render(){
         const { entries, isLoading, teamAndAllies } = this.state;
+
+        let entriesToBeRendered = []
         
+        if(window.location.href.includes("blogdetail")){
+            let selectedUid = window.location.href.split("/").pop()
+            entriesToBeRendered = entries.filter((entry) => {
+                return entry.uid !== selectedUid
+            })
+        } else {
+            entriesToBeRendered = entries
+        }
+
         if ( isLoading ) {
             return null;
         }
+
         let category = 'Insights'
-        let sortedEntries = entries.sort((a, b) => b.date - a.date)
+        let sortedEntries = entriesToBeRendered.sort((a, b) => b.date - a.date)
         let componentsList = sortedEntries.map((blogPost) => {
 
             let author = teamAndAllies.filter((taa) => {
