@@ -41,14 +41,14 @@ import GoogleMap from "./blocks/GoogleMap";
 import Columns from "./blocks/Columns";
 
 import { createBrowserHistory } from "history";
-import { BrowserRouter, Switch, Route  } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, HashRouter  } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 const hist = createBrowserHistory();
 class Root extends Component{
     render(){
         return(
-            <BrowserRouter history={hist} basename={'/'}>
+            <BrowserRouter history={hist}>
                 <Switch>
                     <Route exact path={`${process.env.PUBLIC_URL}/`} component={MachAliance}/>
 
@@ -80,7 +80,7 @@ class Root extends Component{
                     <Route exact path={`${process.env.PUBLIC_URL}/columns`} component={Columns}/>
 
                     <Route path={`${process.env.PUBLIC_URL}/404`} component={error404}/>
-                    <Route component={error404}/>
+                    <Route component={MachAliance}/>
 
                 </Switch>
             </BrowserRouter>
