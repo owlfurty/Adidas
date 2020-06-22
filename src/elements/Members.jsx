@@ -38,7 +38,9 @@ class Members extends Component{
         let elements = sortedList.map((member) => {
             return (
                 <div className="col-6 col-lg-3" key={member.uid}>
-                    <img alt="members" src={member.member_logo.url}/>
+                    <a href={member.members_site}>
+                        <img alt="members" src={member.member_logo.url}/>
+                    </a>
                     <p className="member">{member.title}</p>
                 </div>
             )

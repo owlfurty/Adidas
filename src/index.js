@@ -41,7 +41,7 @@ import GoogleMap from "./blocks/GoogleMap";
 import Columns from "./blocks/Columns";
 
 import { createBrowserHistory } from "history";
-import { BrowserRouter, Switch, Route, HashRouter  } from 'react-router-dom';
+import { BrowserRouter, Switch, Route  } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 const hist = createBrowserHistory();

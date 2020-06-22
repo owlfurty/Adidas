@@ -55,7 +55,6 @@ class MainDemo extends Component {
                 </div>
                 {/* End ArchitectureComp Area */}
 
-
                 {/* Start Members Area */}
                 <div className="members-area members-position-top linend">
                     <Members />

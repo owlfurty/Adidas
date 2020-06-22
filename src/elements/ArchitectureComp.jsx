@@ -56,7 +56,7 @@ class ArchitectureComp extends Component{
                                     <div className="paragraph">
                                         {/* <p className="body-text">{architecture.content_title}</p> */}
                                         <div className="body-text" dangerouslySetInnerHTML={{ __html: architecture.summary} } />
-                                        <a className="text-link" href="/">{architecture.read_more}</a>
+                                        <a className="text-link" href="/mach-technology">{architecture.read_more}</a>
                                     </div>
                                 </div>
                             </div>
