@@ -9,6 +9,7 @@ import Getintouch from "../elements/Getintouch"
 import MyForm from "../elements/MyForm"
 import TheboardComp from "../elements/TheboardComp";
 import CrewComp from "../elements/CrewComp";
+import Members from "../elements/Members";
 
 class About extends Component {
     constructor() {
@@ -104,7 +105,7 @@ class About extends Component {
 
                     </div>
                     {/* End AboutComp Area */}
-                    
+
                     {/* Start TheboardComp Area */}
                     <div className="theboard-area theboardComp-position-top container-desktop">
                         <TheboardComp />
@@ -116,9 +117,17 @@ class About extends Component {
 
                 {/* Start CrewComp Area */}
                 <div className="CrewComp-area CrewComp-position-top container-desktop">
-                        <CrewComp />
-                    </div>
-                    {/* End CrewComp Area */}
+                    <CrewComp />
+                </div>
+                {/* End CrewComp Area */}
+
+                {/* Start Members Area */}
+                <div className="members-area members-position-top linend">
+                    <Members />
+                </div>
+                {/* End Members Area */}
+
+
 
                 {/* Start MyForm Area */}
                 <div className="container-desktop myForm-area myForm-position-top linend">
