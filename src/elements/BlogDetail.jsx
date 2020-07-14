@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PageHelmet from "../component/common/Helmet";
+// import PageHelmet from "../component/common/Helmet";
 import ScrollToTop from 'react-scroll-up';
 import { FiChevronUp } from "react-icons/fi";
 import Header from "../component/header/Header";
@@ -57,7 +57,15 @@ class BlogDetail extends Component {
         return (
 
             <React.Fragment>
-                <PageHelmet pageTitle='Blog Details' ogTitle={blog.og_title || blog.title} ogDescription={blog.og_description} ogImage={blog.og_image ? blog.og_image.url : "https://images.contentstack.io/v3/assets/bltb9eff0ec0532965e/blta5fb5186db0221ca/5eecbe71464b61607c65f1ab/Matts_blog_-_pic.jpg"}/>
+
+                <head>
+                    <title>{blog.og_title || blog.title}</title>
+                    <meta property="og:title" content={blog.og_title} />
+                    <meta property="og:description" content={blog.og_description} />
+                    <meta property="og:image" content={blog.og_image ? blog.og_image.url : "https://images.contentstack.io/v3/assets/bltb9eff0ec0532965e/blta5fb5186db0221ca/5eecbe71464b61607c65f1ab/Matts_blog_-_pic.jpg"} />
+                </head>
+
+                {/* <PageHelmet pageTitle='Blog Details' ogTitle={blog.og_title || blog.title} ogDescription={blog.og_description} ogImage={blog.og_image ? blog.og_image.url : "https://images.contentstack.io/v3/assets/bltb9eff0ec0532965e/blta5fb5186db0221ca/5eecbe71464b61607c65f1ab/Matts_blog_-_pic.jpg"}/> */}
                 <Header headertransparent="header--black" colorblack="color--white" logoname="logo.png" />
                 {/* Start Breadcrump Area */}
                 <div className="sub-hero rn-page-title-area pt--120 bg_image" style={{ backgroundImage: `url(${blog.hero_image.url})` }} data-black-overlay="3">
