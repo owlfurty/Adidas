@@ -1,6 +1,7 @@
 import React, { Component , Fragment } from "react";
 import ScrollToTop from 'react-scroll-up';
 import { FiChevronUp } from "react-icons/fi";
+import PageHelmet from "../common/Helmet";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 
