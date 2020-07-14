@@ -54,7 +54,6 @@ class BlogDetail extends Component {
         if ( loading ) {
             return null;
         }
-        console.log(blog)
         return (
 
             <React.Fragment>
