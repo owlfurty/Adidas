@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 // import PageHelmet from "../component/common/Helmet";
+import Head from 'next/head'
 import ScrollToTop from 'react-scroll-up';
 import { FiChevronUp } from "react-icons/fi";
 import Header from "../component/header/Header";
@@ -58,12 +59,14 @@ class BlogDetail extends Component {
 
             <React.Fragment>
 
-                <head>
+                <Head>
                     <title>{blog.og_title || blog.title}</title>
-                    <meta property="og:title" content={blog.og_title} />
-                    <meta property="og:description" content={blog.og_description} />
-                    <meta property="og:image" content={blog.og_image ? blog.og_image.url : "https://images.contentstack.io/v3/assets/bltb9eff0ec0532965e/blta5fb5186db0221ca/5eecbe71464b61607c65f1ab/Matts_blog_-_pic.jpg"} />
-                </head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1" />
+                    <meta charSet="utf-8" />
+                    <meta name="description" content={blog.og_description}></meta>
+                    <meta property="og:title" content={blog.og_title || blog.title}  key="ogtitle" />
+                    <meta property="og:description" content={blog.og_description} key="ogdesc" />
+                </Head>
 
                 {/* <PageHelmet pageTitle='Blog Details' ogTitle={blog.og_title || blog.title} ogDescription={blog.og_description} ogImage={blog.og_image ? blog.og_image.url : "https://images.contentstack.io/v3/assets/bltb9eff0ec0532965e/blta5fb5186db0221ca/5eecbe71464b61607c65f1ab/Matts_blog_-_pic.jpg"}/> */}
                 <Header headertransparent="header--black" colorblack="color--white" logoname="logo.png" />
