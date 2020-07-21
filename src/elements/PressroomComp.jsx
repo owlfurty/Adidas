@@ -95,7 +95,7 @@ class PressroomComp extends Component{
                                 </div>
                             </div>
                         </div>
-                        <a class="button" href="/newsroom">Show all</a>
+                        <a className="button" href="/newsroom">Show all</a>
                     </div>   
                 </div>
                 

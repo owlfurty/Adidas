@@ -38,8 +38,8 @@ class Events extends Component{
             return (
                 <li key={event.uid}>
                     <a href={event.event_url}>
-                        <span class="event-date">{formattedDate + " - " + event.event_city}</span>
-                        <span class="event-title">{event.title}</span>
+                        <span className="event-date">{formattedDate + " - " + event.event_city}</span>
+                        <span className="event-title">{event.title}</span>
                     </a>
                 </li>
             )
@@ -82,7 +82,7 @@ class Events extends Component{
                                     <ul>
                                         {componentsList}
                                     </ul>
-                                    {/* <a class="button whitebg" href="/events">More events</a> */}
+                                    {/* <a className="button whitebg" href="/events">More events</a> */}
                                 </div>
                             </div>
                         </div>
