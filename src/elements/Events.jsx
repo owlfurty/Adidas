@@ -33,7 +33,8 @@ class Events extends Component{
 
         let elements = list.map((event) => {
             let eventDate = new Date(Date.parse(event.event_date))
-            let formattedDate = eventDate.getDate()+"-"+eventDate.getMonth()+"-"+eventDate.getFullYear()
+            let evenMonth = eventDate.getMonth() + 1
+            let formattedDate = eventDate.getDate()+"-"+evenMonth+"-"+eventDate.getFullYear()
             
             return (
                 <li key={event.uid}>
