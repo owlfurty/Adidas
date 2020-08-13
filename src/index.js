@@ -44,11 +44,20 @@ import { createBrowserHistory } from "history";
 import { BrowserRouter, Switch, Route  } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-175292539-1', {
+    debug: false,
+    titleCase: false
+})
+ReactGA.pageview(window.location.pathname + window.location.search)
+
 const hist = createBrowserHistory();
 class Root extends Component{
+
     render(){
         return(
-            <BrowserRouter history={hist}>
+            <BrowserRouter history={hist} >
                 <Switch>
                     <Route exact path={`${process.env.PUBLIC_URL}/`} component={MachAliance}/>
 

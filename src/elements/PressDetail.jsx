@@ -7,6 +7,13 @@ import Footer from "../component/footer/Footer";
 import { IoMdCalendar } from "react-icons/io";
 import Pressroom from "../elements/Pressroom";
 
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-175292539-1', {
+    debug: false,
+    titleCase: false
+})
+
 class PressDetail extends Component {
 
     constructor(props) {
@@ -35,11 +42,13 @@ class PressDetail extends Component {
     }
 
     componentDidMount(){
+        ReactGA.pageview(window.location.pathname + window.location.search)
         this.getNews(this.uid)
     }
 
     componentWillReceiveProps(){
         if(this.props.location.pathname !== this.props.history.location.pathname ){
+            ReactGA.pageview(window.location.pathname + window.location.search)
             this.getNews(this.props.history.location.pressRelease.uid)
             window.scrollTo({top: 0, left: 0, behavior: 'smooth' })
         }

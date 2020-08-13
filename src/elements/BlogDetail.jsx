@@ -9,6 +9,13 @@ import { IoMdCreate } from "react-icons/io";
 import InsightsComp from "../elements/InsightsComp";
 import $ from "jquery";
 
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-175292539-1', {
+    debug: false,
+    titleCase: false
+})
+
 class BlogDetail extends Component {
   constructor(props) {
     super(props);
@@ -40,6 +47,7 @@ class BlogDetail extends Component {
   }
 
   componentDidMount() {
+    ReactGA.pageview(window.location.pathname + window.location.search)
     this.getBlog(this.uid);
     // $("body").css("background-color", "yellow");
     $("meta[name=description]").remove();
@@ -49,7 +57,9 @@ class BlogDetail extends Component {
   componentWillReceiveProps() {
     if (this.props.location.pathname !== this.props.history.location.pathname) {
       this.getBlog(this.props.history.location.blogpost.uid);
+      ReactGA.pageview(window.location.pathname + window.location.search)
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      
     }
   }
 

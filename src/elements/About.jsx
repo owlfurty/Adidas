@@ -11,6 +11,13 @@ import TheboardComp from "../elements/TheboardComp";
 import CrewComp from "../elements/CrewComp";
 import Members from "../elements/Members";
 
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-175292539-1', {
+    debug: false,
+    titleCase: false
+})
+
 class About extends Component {
     constructor() {
         super()
@@ -19,6 +26,7 @@ class About extends Component {
     }
 
     componentDidMount() {
+        ReactGA.pageview(window.location.pathname + window.location.search)
         this.getManifest()
     }
 

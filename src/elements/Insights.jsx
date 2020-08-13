@@ -9,6 +9,13 @@ import Getintouch from "../elements/Getintouch"
 import MyForm from "../elements/MyForm"
 import InsightsComp from "../elements/InsightsComp";
 
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-175292539-1', {
+    debug: false,
+    titleCase: false
+})
+
 class Insights extends Component{
     constructor(){
         super()
@@ -19,6 +26,7 @@ class Insights extends Component{
     componentDidMount(){
         this.getInsights()
         this.getInsightHeader()
+        ReactGA.pageview(window.location.pathname + window.location.search)
     }
 
     getInsightHeader = () => {

@@ -8,14 +8,22 @@ import { FiChevronUp } from "react-icons/fi";
 import Getintouch from "../elements/Getintouch"
 import MyForm from "../elements/MyForm"
 
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-175292539-1', {
+    debug: false,
+    titleCase: false
+})
+
 class Manifesto extends Component{
     constructor(){
         super()
-
+        
         this.state = { isLoading : true, manifesto: null}
     }
-
+    
     componentDidMount(){
+        ReactGA.pageview(window.location.pathname + window.location.search)
         this.getManifest()
     }
 

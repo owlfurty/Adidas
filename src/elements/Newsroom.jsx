@@ -10,16 +10,24 @@ import MyForm from "../elements/MyForm"
 import Pressroom from "../elements/Pressroom"
 import Mediacontacts from "../elements/Mediacontacts";
 
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-175292539-1', {
+    debug: false,
+    titleCase: false
+})
+
 class Newsroom extends Component {
     constructor() {
         super()
-
+        
         this.state = { isLoading: true, pressrelease: null, newsroomheader:null }
     }
-
+    
     componentDidMount() {
         this.getInsights()
         this.getNewsroomHeader()
+        ReactGA.pageview(window.location.pathname + window.location.search)
     }
 
     getNewsroomHeader = () => {

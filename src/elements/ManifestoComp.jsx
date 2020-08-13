@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
 class ManifestoComp extends Component{
-
+    
     constructor(){
         super()
-
+        
         this.state = { isLoading : true, manifesto: null}
     }
-
+    
     componentDidMount(){
         this.getManifest()
     }
