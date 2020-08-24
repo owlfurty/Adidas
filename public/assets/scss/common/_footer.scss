@@ -1,13 +1,26 @@
 /*--------------------
 Footer Styles 
 ----------------------*/
-
+.footer-button {
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: bold;
+    margin: 20px 0 60px;
+    &:hover {
+        color: #000;
+        background: #fff;
+    }
+}
 .footer-wrapper {
     position: relative;
 }
 
 .footer-left {
-    padding: 190px 120px;
+    padding: 150px 120px;
     position: relative;
     z-index: 2;
     margin-right: -15px;
