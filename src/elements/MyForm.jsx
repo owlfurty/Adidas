@@ -81,7 +81,7 @@ class Footer extends Component {
 
                     <li>
                       <a href={joinmovement.third_button.href}>
-                        <span className="join-category">Individuals</span>
+                        <span className="join-category">{joinmovement.third_title}</span>
                         <span className="join-title">{joinmovement.third_description}</span>
                         <button className={"button"}>{joinmovement.third_button.title}</button>
                       </a>
