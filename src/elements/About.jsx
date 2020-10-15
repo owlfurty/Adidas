@@ -9,7 +9,7 @@ import Getintouch from "../elements/Getintouch"
 import MyForm from "../elements/MyForm"
 import TheboardComp from "../elements/TheboardComp";
 import CrewComp from "../elements/CrewComp";
-import Members from "../elements/Members";
+// import Members from "../elements/Members";
 
 import ReactGA from 'react-ga';
 
@@ -22,16 +22,35 @@ class About extends Component {
     constructor() {
         super()
 
-        this.state = { isLoading: true, about: null }
+        this.state = { isManifestLoading: true, isAboutLoading: true, about: null, manifesto: null }
     }
 
     componentDidMount() {
         ReactGA.pageview(window.location.pathname + window.location.search)
         this.getManifest()
+        this.getAbout()
+    }
+
+    getAbout = () => {
+        fetch('https://cdn.contentstack.io/v3/content_types/about/entries?environment=development&locale=en-us', {
+            method: 'get',
+            mode: 'cors',
+            headers: {
+                api_key: 'bltb9eff0ec0532965e',
+                access_token: 'csbcb89082a35b960cf9d10e11',
+                Accept: "*/*"
+            }
+        })
+        .then((response) => {
+            return response.json()
+        })
+        .then((json) => {
+            this.setState({ about: json.entries[0], isAboutLoading: false })
+        })
     }
 
     getManifest = () => {
-        fetch('https://cdn.contentstack.io/v3/content_types/about/entries?environment=development&locale=en-us', {
+        fetch('https://cdn.contentstack.io/v3/content_types/manifesto/entries?environment=development&locale=en-us', {
             method: 'get',
             mode: 'cors',
             headers: {
@@ -44,16 +63,16 @@ class About extends Component {
                 return response.json()
             })
             .then((json) => {
-                this.setState({ about: json.entries[0], isLoading: false })
+                this.setState({ manifesto: json.entries[0], isManifestLoading: false })
             })
     }
 
 
     render() {
         let category = 'About MACH Alliance'
-        const { isLoading, about } = this.state
+        const { isAboutLoading, isManifestLoading, about, manifesto } = this.state
 
-        if (isLoading) {
+        if (isAboutLoading || isManifestLoading) {
             return null
         }
 
@@ -86,6 +105,68 @@ class About extends Component {
 
                 {/* Start About */}
                 <div className="rn-blog-details pb--70">
+
+                    
+                    
+                    {/* Start ManifestoComp Area */}
+                     {/* <ManifestoComp /> */}
+                     <div className="manifesto-wrapper">
+                    <div className="container">
+                        <div className="row row--35 align-items-center">
+
+                            <div className="col-lg-8 col-md-12">
+                                <div className="manifesto-inner inner">
+                                    <div className="section-title">
+                                        <h3 className="category">MANIFESTO</h3>
+                                        <h6 className="quote-title"> {manifesto.quote_title}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="container-desktop">
+                        <div className="quote-thumb">
+                            <p className="text-white text-italic">
+                                {manifesto.quote_thumb}
+                            </p>
+                        </div>
+                    </div>
+                    <div className="container">
+                        <div className="row row--35 align-items-center">
+                            <div className="col-lg-8 col-md-12">
+                                <div className="paragraph">
+                                    <span className="body-summary" dangerouslySetInnerHTML={{ __html: manifesto.summary} } />
+                                    <span className="body-text" dangerouslySetInnerHTML={{ __html: manifesto.full_text} } />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+                {/* End ManifestoComp Area */}
+
+
+
+
+
+
+
+                    
+                    {/* Start TheboardComp Area */}
+                    <div className="theboard-area theboardComp-position-top container-desktop">
+                        
+                        <TheboardComp />
+                    </div>
+                    {/* End TheboardComp Area */}
+                    
+                    
+                </div>
+                {/* End About */}
+
+                {/* Start CrewComp Area */}
+                <div className="CrewComp-area CrewComp-position-top container-desktop">
+                    <CrewComp />
+
                     {/* Start AboutComp Area */}
                     <div className="manifesto-wrapper">
                         <div className="container">
@@ -114,24 +195,13 @@ class About extends Component {
                     </div>
                     {/* End AboutComp Area */}
 
-                    {/* Start TheboardComp Area */}
-                    <div className="theboard-area theboardComp-position-top container-desktop">
-                        <TheboardComp />
-                    </div>
-                    {/* End TheboardComp Area */}
-
-                </div>
-                {/* End About */}
-
-                {/* Start CrewComp Area */}
-                <div className="CrewComp-area CrewComp-position-top container-desktop">
-                    <CrewComp />
                 </div>
                 {/* End CrewComp Area */}
 
                 {/* Start Members Area */}
                 <div className="members-area members-position-top linend">
-                    <Members />
+                    {/* <Members /> */}
+                    <br/><br/><br/><br/>
                 </div>
                 {/* End Members Area */}
 

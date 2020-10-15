@@ -60,8 +60,8 @@ class Header extends Component{
                     <div className="header-left">
                         <nav className="mainmenunav d-lg-block">
                             <ul className="mainmenu">
-                                <li><NavLink to="/about">About MACH Alliance</NavLink></li>
-                                <li><NavLink to="/manifesto" >Manifesto</NavLink></li>
+                                <li><NavLink to="/about">About</NavLink></li>
+                                <li><NavLink to="/members" >Members</NavLink></li>
                                 <li><NavLink to="/mach-technology" >Mach Technology</NavLink></li>
                                 <li><NavLink to="/insights" >Insights</NavLink></li>
                                 <li><NavLink to="/newsroom" >Newsroom</NavLink></li>

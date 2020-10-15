@@ -18,7 +18,7 @@ class Footer extends Component{
                                         <div className="inner">
                                             <h2>Join us</h2>
                                             <span class="join-title">MACH Alliance newsletter sign-up</span>
-                                            <a target="_blank" href="https://share.hsforms.com/1vH2ljjp8TvS1cbURdpNKbw4t5u0"><button class="footer-button">Join the movement</button></a>
+                                            <a rel="noopener" href="https://share.hsforms.com/1vH2ljjp8TvS1cbURdpNKbw4t5u0"><button class="footer-button">Join the movement</button></a>
                                             <h2>Follow us</h2>
                                             {/* Start Single Widget  */}
                                             <div className="">

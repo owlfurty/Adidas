@@ -2,6 +2,19 @@
     members Area 
 ======================*/
 
+.mbrs .members-inner .section-title {
+    display: none;
+}
+
+.mbrs .members-inner .section-title.vis {
+    display: inline-block;
+    padding-bottom: 1em!important;
+}
+
+a.button.ml20 {
+    margin-top: 20px;
+    margin-right: 10px!important;
+}
 .rn-finding-us-area {
     .inner {
         position: relative;

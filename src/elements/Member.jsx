@@ -7,6 +7,7 @@ import Breadcrumb from "../elements/common/Breadcrumb";
 import { FiChevronUp } from "react-icons/fi";
 import Getintouch from "../elements/Getintouch"
 import MyForm from "../elements/MyForm"
+import Members from "../elements/Members";
 
 import ReactGA from 'react-ga';
 
@@ -15,11 +16,11 @@ ReactGA.initialize('UA-175292539-1', {
     titleCase: false
 })
 
-class Manifesto extends Component{
+class Member extends Component{
     constructor(){
         super()
         
-        this.state = { isLoading : true, manifesto: null}
+        this.state = { isLoading : true, member: null}
     }
     
     componentDidMount(){
@@ -28,7 +29,7 @@ class Manifesto extends Component{
     }
 
     getManifest = () => {
-        fetch('https://cdn.contentstack.io/v3/content_types/manifesto/entries?environment=development&locale=en-us', {
+        fetch('https://cdn.contentstack.io/v3/content_types/member/entries?environment=development&locale=en-us', {
             method:'get',
             mode:'cors',
             headers:{
@@ -41,14 +42,14 @@ class Manifesto extends Component{
             return response.json()
         })
         .then((json) => {
-            this.setState({manifesto:json.entries[0], isLoading:false})
+            this.setState({member:json.entries[0], isLoading:false})
         })
     }
 
 
     render(){
-        let category = 'Manifesto'
-        const { isLoading, manifesto} = this.state
+        let category = 'Member'
+        const { isLoading, member} = this.state
 
         if( isLoading ){
             return null
@@ -56,7 +57,7 @@ class Manifesto extends Component{
 
         return(
             <React.Fragment>
-                <PageHelmet pageTitle='Manifesto' />
+                <PageHelmet pageTitle='Member' />
                 <Header headertransparent="header--transparent" colorblack="color--black" logoname="logo.png" />
                 
                 {/* Start Breadcrump Area */}
@@ -65,58 +66,88 @@ class Manifesto extends Component{
                         <div className="row">
                             <div className="col-lg-12 pt--80">
                                 <div className="inner">
-                                    <h1 className="title">Enterprise <br/> MACHified.</h1>
+                                    <h1 className="title">MACH Alliance Growth  <br/>and Expansion Efforts.</h1>
                                 </div>
                             </div>
                         </div>
-                        {/* Start Home CTA */}
-                        {/* <div className="header-btn">
-                            <a className="rn-btn home-btn" target="blank" href="https://airtable.com/shr4tKK2Kduhj84iM">
-                                <span>Sign up</span>
-                            </a>
-                        </div> */}
-                                {/* End Home CTA */}
                     </div>
-                    <div className="white-space"><Breadcrumb title={'Manifesto'} /></div>
+                    <div className="white-space"><Breadcrumb title={'Members'} /></div>
                 </div>
                 {/* End Breadcrump Area */}
 
-                {/* Start Manifesto */}
+                {/* Start Member */}
                 <div className="rn-blog-details pb--70 bg_color--1">
-                    {/* Start ManifestoComp Area */}
-                     {/* <ManifestoComp /> */}
-                     <div className="manifesto-wrapper">
+                    {/* Start MemberComp Area */}
+                     {/* <MemberComp /> */}
+                     <div className="member-wrapper">
                     <div className="container">
                         <div className="row row--35 align-items-center">
 
                             <div className="col-lg-8 col-md-12">
-                                <div className="manifesto-inner inner">
+                                <div className="member-inner inner">
                                     <div className="section-title">
-                                        <h3 className="category">{category}</h3>
-                                        <h6 className="quote-title"> {manifesto.quote_title}</h6>
+                                        <h3 className="category">{category}s</h3>
+                                        {/* <h6 className="quote-title"> {member.quote_title}</h6> */}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="container-desktop">
+                    {/* <div className="container-desktop">
                         <div className="quote-thumb">
                             <p className="text-white text-italic">
-                                {manifesto.quote_thumb}
+                                {member.quote_thumb}
                             </p>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="container">
                         <div className="row row--35 align-items-center">
                             <div className="col-lg-8 col-md-12">
                                 <div className="paragraph">
-                                    <span className="body-summary" dangerouslySetInnerHTML={{ __html: manifesto.summary} } />
-                                    <span className="body-text" dangerouslySetInnerHTML={{ __html: manifesto.full_text} } />
+                                    <span className="body-summary" dangerouslySetInnerHTML={{ __html: member.summary} } />
+                                    <span className="body-text" dangerouslySetInnerHTML={{ __html: member.full_text} } />
+                                </div>
+                                    <a className="button ml20" href='#CompanyMembers'>{member.company_members}</a>
+                                    <a className="button" href='#IndividualMembers'>{member.individual_members}</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {/* Start Members Area */}
+                    <div id="CompanyMembers" className="members-area members-position-top linend mbrs">
+                        <div class="container"><div class="row row--35 align-items-center"><div class="col-lg-7 col-md-12"><div class="members-inner inner"><div class="section-title vis"><h3 class="category">Company Members</h3></div></div></div></div></div>
+                        <Members />
+                    </div>
+                    {/* End Members Area */}
+
+
+                    <div id="IndividualMembers" className="container">
+                        <div className="row row--35 align-items-center">
+
+                            <div className="col-lg-8 col-md-12">
+                                <div className="member-inner inner">
+                                    <div className="section-title">
+                                        <h3 className="category">Individual Members</h3>
+                                        {/* <h6 className="quote-title"> {member.quote_title}</h6> */}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                   
+
+
+                    <div className="container">
+                        <div className="row row--35 align-items-center">
+                            <div className="col-lg-8 col-md-12">
+                                <div className="paragraph">
+                                    <span className="body-text" dangerouslySetInnerHTML={{ __html: member.description_individual_members} } />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 {/* End ManifestoComp Area */}
                     
@@ -149,4 +180,4 @@ class Manifesto extends Component{
         )
     }
 }
-export default Manifesto;
+export default Member;

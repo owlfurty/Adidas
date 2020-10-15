@@ -15,6 +15,7 @@ import PressDetail from './elements/PressDetail'
 import Service from "./elements/Service";
 import ServiceDetails from "./elements/ServiceDetails";
 import About from "./elements/About";
+import Member from "./elements/Member";
 import Contact from "./elements/Contact";
 
 import PortfolioDetails from "./elements/PortfolioDetails";
@@ -66,6 +67,7 @@ class Root extends Component{
                     <Route exact path={`${process.env.PUBLIC_URL}/service-details`} component={ServiceDetails}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/contact`} component={Contact}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/about`} component={About}/>
+                    <Route exact path={`${process.env.PUBLIC_URL}/members`} component={Member}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/portfolio-details`} component={PortfolioDetails}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/blog`} component={Blog}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/blog-details`} component={BlogDetails}/>

@@ -70,6 +70,7 @@ class Footer extends Component {
                       </a>
                     </li>
 
+                    
                     <li>
                       <a href={joinmovement.second_button.href}>
                         <span className="join-category">{joinmovement.second_title}</span>
@@ -77,6 +78,15 @@ class Footer extends Component {
                         <button className="button">{joinmovement.second_button.title}</button>
                       </a>
                     </li>
+
+                    <li>
+                      <a href={joinmovement.third_button.href}>
+                        <span className="join-category">Individuals</span>
+                        <span className="join-title">{joinmovement.third_description}</span>
+                        <button className={"button"}>{joinmovement.third_button.title}</button>
+                      </a>
+                    </li>
+
 
                   </ul>
                 </div>
