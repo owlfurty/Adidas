@@ -117,7 +117,7 @@ class Member extends Component{
 
                     {/* Start Members Area */}
                     <div id="CompanyMembers" className="members-area members-position-top linend mbrs">
-                        <div class="container"><div class="row row--35 align-items-center"><div class="col-lg-7 col-md-12"><div class="members-inner inner"><div class="section-title vis"><h3 class="category">Company Members</h3></div></div></div></div></div>
+                        <div class="container"><div class="row row--35 align-items-center"><div class="col-lg-7 col-md-12"><div class="members-inner inner"><div class="section-title vis"><h3 class="category">{member.company_members}</h3></div></div></div></div></div>
                         <Members />
                     </div>
                     {/* End Members Area */}
@@ -129,7 +129,7 @@ class Member extends Component{
                             <div className="col-lg-8 col-md-12">
                                 <div className="member-inner inner">
                                     <div className="section-title">
-                                        <h3 className="category">Individual Members</h3>
+                                        <h3 className="category">{member.individual_members}</h3>
                                         {/* <h6 className="quote-title"> {member.quote_title}</h6> */}
                                     </div>
                                 </div>
