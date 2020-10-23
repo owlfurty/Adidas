@@ -8,7 +8,7 @@ import { FiChevronUp } from "react-icons/fi";
 import Getintouch from "../elements/Getintouch"
 import MyForm from "../elements/MyForm"
 import Members from "../elements/Members";
-
+import CompIndv from "../elements/CompIndv";
 import ReactGA from 'react-ga';
 
 ReactGA.initialize('UA-175292539-1', {
@@ -75,6 +75,7 @@ class Member extends Component{
                 </div>
                 {/* End Breadcrump Area */}
 
+
                 {/* Start Member */}
                 <div className="rn-blog-details pb--70 bg_color--1">
                     {/* Start MemberComp Area */}
@@ -121,6 +122,13 @@ class Member extends Component{
                         <Members />
                     </div>
                     {/* End Members Area */}
+
+                    {/* Start CrewComp Area */}
+                    <div className="CrewComp-area CrewComp-position-top container-desktop">
+                        <CompIndv />
+
+                    </div>
+                    {/* End CrewComp Area */}
 
 
                     <div id="IndividualMembers" className="container">

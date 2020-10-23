@@ -398,6 +398,26 @@ h3.category {
     }
 }
 
+.team-content.zindexplus {
+    padding-top: 100px;
+    &::after {
+        background: url(/assets/images/brand/triangle-black.svg) no-repeat;
+    }
+    z-index: 99;
+    background-color: $brand-yellow;
+    .category {
+        color: black;
+    }
+    .team-pictures {
+        img {
+            box-shadow: -8px 8px 0 black;
+        }
+        p {
+            color: black;
+        }
+    }
+}
+
 
 .members-content {
     padding: 0 30px 30px;

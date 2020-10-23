@@ -156,6 +156,7 @@ class About extends Component {
                     <div className="theboard-area theboardComp-position-top container-desktop">
                         
                         <TheboardComp />
+
                     </div>
                     {/* End TheboardComp Area */}
                     
