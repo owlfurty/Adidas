@@ -26,6 +26,7 @@ import MachTechnology from "./elements/MachTechnology";
 import error404 from "./elements/error404";
 
 import Manifesto from "./elements/Manifesto";
+import Machathon from "./elements/Machathon";
 
 // Blocks Layout
 
@@ -74,6 +75,7 @@ class Root extends Component{
                     <Route exact path={`${process.env.PUBLIC_URL}/newsroom`} component={Newsroom}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/newsdetail/:uid`} component={PressDetail}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/manifesto`} component={Manifesto}/>
+                    <Route exact path={`${process.env.PUBLIC_URL}/machathon`} component={Machathon}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/blogdetail/:uid`} component={BlogDetail}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/insights`} component={Insights}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/mach-technology`} component={MachTechnology}/>

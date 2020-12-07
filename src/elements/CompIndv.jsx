@@ -55,13 +55,13 @@ class CrewComp extends Component{
 
     render(){
 
-        const {boardMembers, advisoryMembers, isLoading } = this.state;
+        const {advisoryMembers, isLoading } = this.state;
         
         if ( isLoading ) {
             return null;
         }
 
-        let boardList = this.getElements(boardMembers)
+        // let boardList = this.getElements(boardMembers)
         let advisoryList = this.getElements(advisoryMembers)
 
         let

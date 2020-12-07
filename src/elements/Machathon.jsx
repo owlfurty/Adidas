@@ -6,7 +6,7 @@ import Footer from "../component/footer/Footer";
 import Breadcrumb from "../elements/common/Breadcrumb";
 import { FiChevronUp } from "react-icons/fi";
 import Getintouch from "../elements/Getintouch"
-import MyForm from "../elements/MyForm"
+import MachathonForm from "../elements/MachathonForm"
 
 import ReactGA from 'react-ga';
 
@@ -15,11 +15,11 @@ ReactGA.initialize('UA-175292539-1', {
     titleCase: false
 })
 
-class Manifesto extends Component{
+class Machathon extends Component{
     constructor(){
         super()
         
-        this.state = { isLoading : true, manifesto: null}
+        this.state = { isLoading : true, machathon: null}
     }
     
     componentDidMount(){
@@ -28,7 +28,7 @@ class Manifesto extends Component{
     }
 
     getManifest = () => {
-        fetch('https://cdn.contentstack.io/v3/content_types/manifesto/entries?environment=development&locale=en-us', {
+        fetch('https://cdn.contentstack.io/v3/content_types/machathon/entries?environment=development&locale=en-us', {
             method:'get',
             mode:'cors',
             headers:{
@@ -41,14 +41,14 @@ class Manifesto extends Component{
             return response.json()
         })
         .then((json) => {
-            this.setState({manifesto:json.entries[0], isLoading:false})
+            this.setState({machathon:json.entries[0], isLoading:false})
         })
     }
 
 
     render(){
-        let category = 'Manifesto'
-        const { isLoading, manifesto} = this.state
+        let category = 'Machathon'
+        const { isLoading, machathon} = this.state
 
         if( isLoading ){
             return null
@@ -56,11 +56,11 @@ class Manifesto extends Component{
 
         return(
             <React.Fragment>
-                <PageHelmet pageTitle='Manifesto' />
+                <PageHelmet pageTitle='Machathon' />
                 <Header headertransparent="header--transparent" colorblack="color--black" logoname="logo.png" />
                 
                 {/* Start Breadcrump Area */}
-                <div className="sub-hero rn-page-title-area pt--120 bg_image" style={{ backgroundImage: `url(/assets/images/hero-images/subpage-03.jpg)` }} data-black-overlay="3">
+                <div className="sub-hero rn-page-title-area pt--120 bg_image" style={{ backgroundImage: `url(/assets/images/hero-images/rocket.jpg)` }} data-black-overlay="3">
                     <div className="container-desktop position-relative">
                         <div className="row">
                             <div className="col-lg-12 pt--80">
@@ -77,55 +77,58 @@ class Manifesto extends Component{
                         </div> */}
                                 {/* End Home CTA */}
                     </div>
-                    <div className="white-space"><Breadcrumb title={'Manifesto'} /></div>
+                    <div className="white-space"><Breadcrumb title={'MACHathon'} /></div>
                 </div>
                 {/* End Breadcrump Area */}
 
-                {/* Start Manifesto */}
+                {/* Start Machathon */}
                 <div className="rn-blog-details pb--70 bg_color--1">
-                    {/* Start ManifestoComp Area */}
-                     {/* <ManifestoComp /> */}
-                     <div className="manifesto-wrapper">
+                    {/* Start MachathonComp Area */}
+                     {/* <MachathonComp /> */}
+                     <div className="machathon-wrapper">
                     <div className="container">
                         <div className="row row--35 align-items-center">
 
                             <div className="col-lg-8 col-md-12">
-                                <div className="manifesto-inner inner">
+                                <div className="machathon-inner inner">
                                     <div className="section-title">
                                         <h3 className="category">{category}</h3>
-                                        <h6 className="quote-title"> {manifesto.quote_title}</h6>
+                                        <h2 className="title hack"> {machathon.quote_title}</h2>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="container-desktop">
-                        <div className="quote-thumb">
-                            <p className="text-white text-italic">
-                                {manifesto.quote_thumb}
-                            </p>
-                        </div>
-                    </div>
+                    
                     <div className="container">
                         <div className="row row--35 align-items-center">
                             <div className="col-lg-8 col-md-12">
                                 <div className="paragraph">
-                                    <span className="body-summary" dangerouslySetInnerHTML={{ __html: manifesto.summary} } />
-                                    <span className="body-text" dangerouslySetInnerHTML={{ __html: manifesto.full_text} } />
+                                    <span className="body-summary" dangerouslySetInnerHTML={{ __html: machathon.summary} } />
+                                    <div className="divide">
+                                        <div className="leftpart lansmant">
+                                            <h2>22-29 <span>January 2021</span></h2>
+                                            <p>from home or wherever you are</p>
+                                        </div>
+                                        <div className="rightpart">
+                                            <img width="391" src="/assets/images/brand/machathon.svg" alt=""/>
+                                        </div>
+                                    </div>
+                                    <span className="hack body-text" dangerouslySetInnerHTML={{ __html: machathon.full_text} } />
                                 </div>
                             </div>
                         </div>
                     </div>
                    
                 </div>
-                {/* End ManifestoComp Area */}
+                {/* End MachathonComp Area */}
                     
                 </div>
-                {/* End Manifesto */}
+                {/* End Machathon */}
                 
                 {/* Start MyForm Area */}
                 <div className="container-desktop myForm-area myForm-position-top linend">
-                    <MyForm />
+                    <MachathonForm />
                 </div>
                 {/* End MyForm Area */}
 
@@ -149,4 +152,4 @@ class Manifesto extends Component{
         )
     }
 }
-export default Manifesto;
+export default Machathon;

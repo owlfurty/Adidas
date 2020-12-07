@@ -1,0 +1,170 @@
+/*====================
+    Machathon
+======================*/
+.machathon-wrapper {
+    &:before {
+        content: "";
+        background-image: url(/assets/images/brand/oval-y.svg);
+        width: 322px;
+        height: 322px;
+        display: inline-block;
+        position: absolute;
+        top: 1000px;
+        right: -80px;
+        z-index: 0;
+        @media #{$lg-layout} {
+            display: none;
+        }
+        @media #{$md-layout} {
+            display: none;
+        }
+        @media #{$sm-layout} {
+            display: none;
+        }
+    }
+    &:after {
+        content: "";
+        background-image: url(/assets/images/brand/rectangle-y.svg);
+        width: 362px;
+        height: 298px;
+        display: inline-block;
+        position: absolute;
+        top: 1560px;
+        left: -80px;
+        z-index: 0;
+        @media #{$lg-layout} {
+            display: none;
+        }
+        @media #{$md-layout} {
+            display: none;
+        }
+        @media #{$sm-layout} {
+            display: none;
+        }
+    }
+}
+
+.divide {
+    padding: 4em 0;
+    width: 100%;
+    min-height: 500px;
+}
+
+.hack {
+    margin-bottom: .5em!important;
+}
+
+.leftpart {
+    z-index: 1;
+    position: absolute;
+    left: -40px;
+    clear: both;
+    display: inline-block;
+    background: black;
+    color: white;
+    padding: 0 100px;
+    @media #{$lg-layout} {
+        position: relative;
+        left: 0;
+        width: 100%;
+        padding: 0 40px;
+        text-align: center;
+    }
+    @media #{$md-layout} {
+        position: relative;
+        left: 0;
+        width: 100%;
+        padding: 0 40px;
+        text-align: center;
+    }
+    @media #{$sm-layout} {
+        position: relative;
+        left: 0;
+        width: 100%;
+        padding: 0 40px;
+        text-align: center;
+    }
+    h2 {
+        color: white;
+        font-size: 100px;
+        border-bottom: 2px solid #fff;
+        padding: 30px 80px 40px;
+        span {
+            font-size: 41px;
+            display: block;
+        }
+        @media #{$lg-layout} {
+            font-size: 52px;
+            padding: 30px 0 40px;
+        }
+        @media #{$md-layout} {
+            font-size: 52px;
+            padding: 30px 0 40px;
+        }
+        @media #{$sm-layout} {
+            font-size: 52px;
+            padding: 30px 40px 40px;
+        }
+    }
+    p {
+        font-size: 36px;
+        line-height: 36px;
+        font-weight: bold;
+        max-width: 368px;
+        text-align: center;
+        margin: 1em auto;
+        @media #{$lg-layout} {
+            font-size: 36px;
+        }
+        @media #{$md-layout} {
+            font-size: 36px;
+        }
+        @media #{$sm-layout} {
+            font-size: 36px;
+        }
+    }
+    float: left;
+    height: 410px;
+    @media #{$lg-layout} {
+        position: relative;
+    }
+    @media #{$md-layout} {
+        position: relative;
+    }
+    @media #{$sm-layout} {
+        position: relative;
+    }
+}
+
+.rightpart {
+    display: inline-block;
+    color: white;
+    h2 {
+        color: white;
+    }
+    float: right;
+    right: -340px;
+    margin-top: 40px;;
+    position: absolute;
+    @media #{$lg-layout} {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        right: 0;
+        margin-bottom: 2em;
+    }
+    @media #{$md-layout} {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        right: 0;
+        margin-bottom: 2em;
+    }
+    @media #{$sm-layout} {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        right: 0;
+        margin-bottom: 2em;
+    }
+}
