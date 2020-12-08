@@ -140,12 +140,17 @@
     }
 }
 
+.section-title.profile-info .description {
+    font-size: 16px;
+    line-height: 23px;
+}
+
 .about-wrapper {
     .thumbnail {
         position: relative;
         z-index: 2;
         img{
-            border-radius: 8px;
+            border-radius: 0;
            
         }
     }
@@ -202,7 +207,26 @@
         }
     }
     p{
-        font-weight: 300;
+        font-size: 16px;
+        line-height: 23px;
         color: rgba(29, 29, 36, 0.75);
     }
 }
+
+.hack.body-text {
+    font-size: 24px;
+    line-height: 28px;
+    @media #{$lg-layout} {
+        font-size: 16px;
+        line-height: 23px;
+    }
+    @media #{$md-layout} {
+        font-size: 16px;
+        line-height: 23px;
+    }
+    @media #{$sm-layout} {
+        font-size: 16px;
+        line-height: 23px;
+    }
+}
+

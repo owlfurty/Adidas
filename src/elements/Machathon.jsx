@@ -91,7 +91,7 @@ class Machathon extends Component{
 
                             <div className="col-lg-8 col-md-12">
                                 <div className="machathon-inner inner">
-                                    <div className="section-title">
+                                    <div className="section-title mt-40">
                                         <h3 className="category">{category}</h3>
                                         <h2 className="title hack"> {machathon.quote_title}</h2>
                                     </div>
@@ -119,7 +119,8 @@ class Machathon extends Component{
                             </div>
                         </div>
                     </div>
-                   
+
+
                 </div>
                 {/* End MachathonComp Area */}
                     
@@ -131,6 +132,29 @@ class Machathon extends Component{
                     <MachathonForm />
                 </div>
                 {/* End MyForm Area */}
+
+                <div class="about-area pt--120 bg_color--1" id="about">
+                        <div class="about-wrapper">
+                            <div class="container">
+                                <div class="row row--35 align-items-center">
+                                    <div class="col-lg-5">
+                                        <div class="thumbnail">
+                                            <img alt="theboard" src={machathon.profile_image.url}/>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="about-inner inner">
+                                            <div class="section-title profile-info">
+                                                <p class="description">
+                                                    <span className="hack body-text" dangerouslySetInnerHTML={{ __html: machathon.profile_info} } />
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 {/* Start Getintouch Area */}
                 <div className="container-desktop getintouch-area getintouch-position-top">

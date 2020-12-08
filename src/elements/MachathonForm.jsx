@@ -48,7 +48,7 @@ class Footer extends Component {
             <div className="row row--35 align-items-center">
               <div className="col-lg-12 col-md-12">
                 <div className="signup-inner inner">
-                  <div className="section-title">
+                  <div className="section-title mt-40">
                     <h3 className="category">{machathonform.title}</h3>
                     <h2>{machathonform.slogan}</h2>
                     <p>{machathonform.description}</p>
