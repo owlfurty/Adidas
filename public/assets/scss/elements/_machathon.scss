@@ -172,3 +172,13 @@
 .section-title.mt-40 {
     margin-top: 40px!important;
 }
+
+
+.sub-hero.blck {
+    @media #{$md-layout} {
+        background-position: right center;
+    }
+    @media #{$sm-layout} {
+        background-position: right center;
+    }
+}
