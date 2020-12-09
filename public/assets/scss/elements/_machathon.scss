@@ -12,6 +12,7 @@
         top: 1000px;
         right: -80px;
         z-index: 0;
+        mix-blend-mode: multiply;
         @media #{$lg-layout} {
             display: none;
         }
@@ -32,6 +33,7 @@
         top: 1560px;
         left: -80px;
         z-index: 0;
+        mix-blend-mode: multiply;
         @media #{$lg-layout} {
             display: none;
         }
